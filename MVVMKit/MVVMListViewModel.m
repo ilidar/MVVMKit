@@ -69,7 +69,7 @@
 #pragma mark - MVVMListViewModelSectioning Methods
 
 - (NSArray *)sectionsForModels:(NSArray *)models {
-  return @[ models ];
+  return @[ @[ models ]];
 }
 
 #pragma mark - MVVMListViewModelDataSource Methods
