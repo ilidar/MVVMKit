@@ -20,20 +20,25 @@ typedef void (^MVVMListViewModelFetchingResult)(NSArray *models);
 
 - (NSInteger)numberOfSections;
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
-- (NSIndexPath *)indexPathForModel:(id)object;
-- (NSArray *)indexPathsForModels:(NSArray *)objects;
-- (id)modelAtIndexPath:(NSIndexPath *)indexPath;
+- (NSIndexPath *)indexPathForModel:(MVVMModel *)model;
+- (NSArray *)indexPathsForModels:(NSArray *)models;
+- (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths;
-- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)object;
+- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)model;
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath;
-- (void)deleteModelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 @protocol MVVMListViewModelSectioning <NSObject>
 
 - (NSArray *)sectionsForModels:(NSArray *)objects;
-- (NSString *)identifierForSection:(NSInteger)section;
+
+@end
+
+@protocol MVVMListViewModelMapping <NSObject>
+
+- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel;
+- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -43,7 +48,8 @@ typedef void (^MVVMListViewModelResult)();
   <
   MVVMListViewModelFetching,
   MVVMListViewModelSectioning,
-  MVVMListViewModelDataSource
+  MVVMListViewModelDataSource,
+  MVVMListViewModelMapping
   >
 
 - (instancetype)initWithModels:(NSArray *)models;

@@ -6,6 +6,8 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "MVVMListViewModel.h"
 
 @interface MVVMListViewModel ()
@@ -37,6 +39,11 @@
   NSAssert(NO, @"Method should be overridden by subclasses");
 }
 
+- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
+  NSAssert(NO, @"Method should be overridden by subclasses");
+  return nil;
+}
+
 #pragma mark - Public Methods
 
 - (void)fetch:(MVVMListViewModelResult)result {
@@ -61,49 +68,66 @@
 
 #pragma mark - MVVMListViewModelSectioning Methods
 
-- (NSArray *)sectionsForModels:(NSArray *)objects {
-  return nil;
-}
-
-- (NSString *)identifierForSection:(NSInteger)section {
-  return nil;
+- (NSArray *)sectionsForModels:(NSArray *)models {
+  return @[ models ];
 }
 
 #pragma mark - MVVMListViewModelDataSource Methods
 
 - (NSInteger)numberOfSections {
-  return 0;
+  return self.sections.count;
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
-  return 0;
+  return [self.sections[(NSUInteger) section] count];
 }
 
-- (NSIndexPath *)indexPathForModel:(id)object {
-  return nil;
+- (NSIndexPath *)indexPathForModel:(MVVMModel *)model {
+  __block NSIndexPath *indexPath = nil;
+  [self.sections enumerateObjectsUsingBlock:^(NSArray *section, NSUInteger sectionIndex, BOOL *stop) {
+    NSUInteger rowIndex = [section indexOfObject:model];
+    if (rowIndex != NSNotFound) {
+      indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
+      *stop = YES;
+    }
+  }];
+  return indexPath;
 }
 
-- (NSArray *)indexPathsForModels:(NSArray *)objects {
-  return nil;
+- (NSArray *)indexPathsForModels:(NSArray *)models {
+  NSMutableArray *result = [NSMutableArray new];
+  for (MVVMModel *model in models) {
+    NSIndexPath *indexPath = [self indexPathForModel:model];
+    if (indexPath) {
+      [result addObject:indexPath];
+    } else {
+      [result addObject:[NSNull null]];
+    }
+  }
+  return result;
 }
 
-- (id)modelAtIndexPath:(NSIndexPath *)indexPath {
-  return nil;
+- (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath {
+  return self.sections[(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
 }
 
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths {
-  return nil;
+  NSMutableArray *result = [NSMutableArray new];
+  for (NSIndexPath *indexPath in indexPaths) {
+    MVVMModel *model = [self modelAtIndexPath:indexPath];
+    if (model) {
+      [result addObject:model];
+    } else {
+      [result addObject:[NSNull null]];
+    }
+  }
+  return result;
 }
 
-- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)object {
-  return nil;
-}
+#pragma mark - MVVMListViewModelMapping
 
-- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
-  return nil;
-}
-
-- (void)deleteModelAtIndexPath:(NSIndexPath *)indexPath {
+- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
+  return [self indexPathForModel:viewModel.model];
 }
 
 @end
