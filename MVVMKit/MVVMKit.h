@@ -14,6 +14,9 @@ FOUNDATION_EXPORT double MVVMKitVersionNumber;
 //! Project version string for MVVMKit.
 FOUNDATION_EXPORT const unsigned char MVVMKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <MVVMKit/PublicHeader.h>
-
-
+#ifdef __OBJC__
+  #import "MVVMModel.h"
+  #import "MVVMViewModel.h"
+  #import "MVVMListViewModel.h"
+  #import "MVVMViewController.h"
+#endif

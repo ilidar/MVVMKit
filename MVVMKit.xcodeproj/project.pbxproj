@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E9443DF62F631CB7659D356 /* MVVMListViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9449BB6595631DDA589E68 /* MVVMListViewModel.h */; };
+		2E9443DF62F631CB7659D356 /* MVVMListViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9449BB6595631DDA589E68 /* MVVMListViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E944CECD9360C00926D8E01 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
 		4525530A1AF95298006A0BEA /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		452553221AF953B1006A0BEA /* MVVMModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553201AF953B1006A0BEA /* MVVMModel.h */; };
-		452553261AF953CF006A0BEA /* MVVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553241AF953CF006A0BEA /* MVVMViewModel.h */; };
+		452553221AF953B1006A0BEA /* MVVMModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553201AF953B1006A0BEA /* MVVMModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		452553261AF953CF006A0BEA /* MVVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553241AF953CF006A0BEA /* MVVMViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452553271AF953CF006A0BEA /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
-		4525532A1AF962EA006A0BEA /* MVVMViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMViewController.h */; };
+		4525532A1AF962EA006A0BEA /* MVVMViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4525532B1AF962EA006A0BEA /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMViewController.m */; };
 /* End PBXBuildFile section */
 
