@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MVVMKit"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "MVVM helpers"
   s.description  = "This is attempt to create couple of MVVM helpers for basic UIKit usage"
   s.homepage     = "https://github.com/ilidar/MVVMKit"
