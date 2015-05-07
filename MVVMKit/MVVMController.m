@@ -1,20 +1,20 @@
 //
-//  MVVMViewController.m
+//  MVVMController.m
 //  MVVMKit
 //
 //  Created by Denys Kotelovych on 5/5/15.
 //  Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import "MVVMViewController.h"
+#import "MVVMController.h"
 
-@interface MVVMViewController ()
+@interface MVVMController ()
 
 @property (nonatomic, strong) MVVMViewModel *viewModel;
 
 @end
 
-@implementation MVVMViewController
+@implementation MVVMController
 
 #pragma mark - Init Methods
 

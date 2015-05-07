@@ -1,5 +1,5 @@
 //
-//  MVVMViewController.h
+//  MVVMController.h
 //  MVVMKit
 //
 //  Created by Denys Kotelovych on 5/5/15.
@@ -10,7 +10,7 @@
 
 @class MVVMViewModel;
 
-@interface MVVMViewController : UIViewController
+@interface MVVMController : UIViewController
 
 @property (nonatomic, strong, readonly) MVVMViewModel *viewModel;
 

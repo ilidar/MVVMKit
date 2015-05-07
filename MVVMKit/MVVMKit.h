@@ -18,5 +18,5 @@ FOUNDATION_EXPORT const unsigned char MVVMKitVersionString[];
   #import "MVVMModel.h"
   #import "MVVMViewModel.h"
   #import "MVVMListViewModel.h"
-  #import "MVVMViewController.h"
+  #import "MVVMController.h"
 #endif
