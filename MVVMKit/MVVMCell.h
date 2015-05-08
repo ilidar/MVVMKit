@@ -9,6 +9,7 @@
 
 @protocol MVVMCell <NSObject>
 
-- (void)reloadWithViewModel:(MVVMViewModel *)viewModel;
+// FIXME: think about type substitution
+- (void)reloadWithViewModel:(id)viewModel;
 
 @end
