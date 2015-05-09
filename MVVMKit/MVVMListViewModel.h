@@ -6,13 +6,13 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import "MVVMViewModel.h"
+#import <PromiseKit/Promise.h>
 
-typedef void (^MVVMListViewModelFetchingResult)(NSArray *models);
+#import "MVVMViewModel.h"
 
 @protocol MVVMListViewModelFetching <NSObject>
 
-- (void)fetchModels:(MVVMListViewModelFetchingResult)result;
+- (PMKPromise *)fetchModels;
 
 @end
 
@@ -54,7 +54,7 @@ typedef void (^MVVMListViewModelResult)();
 
 - (instancetype)initWithModels:(NSArray *)models;
 
-- (void)fetch:(MVVMListViewModelResult)result;
+- (PMKPromise *)fetch;
 - (void)reload;
 - (void)reloadWithModels:(NSArray *)models;
 

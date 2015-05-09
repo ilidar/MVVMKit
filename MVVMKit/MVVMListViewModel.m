@@ -35,8 +35,9 @@
 
 #pragma mark - Overridden Methods
 
-- (void)fetchModels:(MVVMListViewModelFetchingResult)result {
+- (PMKPromise *)fetchModels {
   NSAssert(NO, @"Method should be overridden by subclasses");
+  return nil;
 }
 
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,15 +47,13 @@
 
 #pragma mark - Public Methods
 
-- (void)fetch:(MVVMListViewModelResult)result {
+- (PMKPromise *)fetch {
   __weak __typeof(self) weakSelf = self;
-  [self fetchModels:^(NSArray *objects) {
-    [weakSelf setMutableModels:objects.mutableCopy];
-    [weakSelf reload];
-    if (result) {
-      result();
-    }
-  }];
+  return [self fetchModels]
+    .then(^(NSArray *models) {
+      [weakSelf setMutableModels:models.mutableCopy];
+      [weakSelf reload];
+    });
 }
 
 - (void)reload {

@@ -41,9 +41,9 @@
     registerNib:[UINib nibWithNibName:self.cellNibName bundle:nil]
     forCellReuseIdentifier:self.cellIdentifier];
 
-  [self.viewModel fetch:^{
+  [self.viewModel fetch].then(^{
     [self.tableView reloadData];
-  }];
+  });
 }
 
 #pragma mark - UITableViewDataSource Methods
