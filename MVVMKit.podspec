@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.3"
   s.source_files  = "MVVMKit", "MVVMKit/*.{h,m}"
   s.requires_arc = true
+  s.dependency 'PromiseKit/Promise'
 end
