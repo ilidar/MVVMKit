@@ -22,10 +22,6 @@
 
 #pragma mark - Init Methods
 
-- (instancetype)initWithModel:(MVVMModel *)model {
-  return [self initWithModels:@[ model ]];
-}
-
 - (instancetype)initWithModels:(NSArray *)models {
   self = [super init];
   if (!self) return nil;
