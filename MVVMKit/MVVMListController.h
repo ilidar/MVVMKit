@@ -9,6 +9,16 @@
 #import "MVVMController.h"
 #import "MVVMListViewModel.h"
 
+@class MVVMListController;
+
+@protocol MVVMListControllerFetchingDelegate <NSObject>
+
+ @optional
+- (void)MVVMListControllerFetchingStarted:(MVVMListController *)controller;
+- (void)MVVMListControllerFetchingEnded:(MVVMListController *)controller;
+
+@end
+
 @interface MVVMListController : MVVMController
   <
   UITableViewDataSource,
@@ -16,11 +26,13 @@
   >
 
 @property (nonatomic, strong, readonly) MVVMListViewModel *viewModel;
-
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) id <MVVMListControllerFetchingDelegate> delegate;
 
 - (instancetype)initWithViewModel:(MVVMListViewModel *)viewModel
                       cellNibName:(NSString *)cellName
                    cellIdentifier:(NSString *)identifier;
+
+- (void)reloadData;
 
 @end

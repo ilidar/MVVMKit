@@ -14,6 +14,9 @@
 @property (nonatomic, strong) NSString *cellNibName;
 @property (nonatomic, strong) NSString *cellIdentifier;
 
+- (void)pvm_notifyFetchingStarted;
+- (void)pvm_notifyFetchingEnded;
+
 @end
 
 @implementation MVVMListController
@@ -41,9 +44,18 @@
     registerNib:[UINib nibWithNibName:self.cellNibName bundle:nil]
     forCellReuseIdentifier:self.cellIdentifier];
 
-  [self.viewModel fetch].then(^{
-    [self.tableView reloadData];
-  });
+  [self pvm_notifyFetchingStarted];
+  [self.viewModel fetch]
+    .then(^{
+      [self reloadData];
+    })
+    .finally(^{
+      [self pvm_notifyFetchingEnded];
+    });
+}
+
+- (void)reloadData {
+  [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource Methods
@@ -60,6 +72,20 @@
   UITableViewCell <MVVMCell> *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
   [cell reloadWithViewModel:[self.viewModel viewModelAtIndexPath:indexPath]];
   return cell;
+}
+
+#pragma mark - Private Methods
+
+- (void)pvm_notifyFetchingStarted {
+  if ([self.delegate respondsToSelector:@selector(MVVMListControllerFetchingStarted:)]) {
+    [self.delegate MVVMListControllerFetchingStarted:self];
+  }
+}
+
+- (void)pvm_notifyFetchingEnded {
+  if ([self.delegate respondsToSelector:@selector(MVVMListControllerFetchingEnded:)]) {
+    [self.delegate MVVMListControllerFetchingEnded:self];
+  }
 }
 
 @end
