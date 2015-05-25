@@ -16,6 +16,7 @@
 
 - (void)pvm_notifyFetchingStarted;
 - (void)pvm_notifyFetchingEnded;
+- (void)pvm_notifyFetchingFailed:(NSError *)error;
 
 @end
 
@@ -48,9 +49,10 @@
   [self.viewModel fetch]
     .then(^{
       [self reloadData];
-    })
-    .finally(^{
       [self pvm_notifyFetchingEnded];
+    })
+    .catch(^(NSError *error) {
+      [self pvm_notifyFetchingFailed:error];
     });
 }
 
@@ -85,6 +87,12 @@
 - (void)pvm_notifyFetchingEnded {
   if ([self.delegate respondsToSelector:@selector(MVVMListControllerFetchingEnded:)]) {
     [self.delegate MVVMListControllerFetchingEnded:self];
+  }
+}
+
+- (void)pvm_notifyFetchingFailed:(NSError *)error {
+  if ([self.delegate respondsToSelector:@selector(MVVMListControllerFetchingFailed:error:)]) {
+    [self.delegate MVVMListControllerFetchingFailed:self error:error];
   }
 }
 

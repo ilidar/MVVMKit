@@ -15,6 +15,7 @@
 
  @optional
 - (void)MVVMListControllerFetchingStarted:(MVVMListController *)controller;
+- (void)MVVMListControllerFetchingFailed:(MVVMListController *)controller error:(NSError *)error;
 - (void)MVVMListControllerFetchingEnded:(MVVMListController *)controller;
 
 @end
