@@ -10,9 +10,17 @@
 
 #import "MVVMViewModel.h"
 
-@protocol MVVMListViewModelFetching <NSObject>
+@class MVVMListViewModel;
 
-- (PMKPromise *)fetchModels;
+@protocol MVVMListViewModelDelegate <NSObject>
+
+ @optional
+- (void)listViewModelDidBeginUpdates:(MVVMListViewModel *)listViewModel;
+- (void)listViewModel:(MVVMListViewModel *)listViewModel didInsertModelsAtIndexPaths:(NSArray *)indexPaths;
+- (void)listViewModel:(MVVMListViewModel *)listViewModel didDeleteModelsAtIndexPaths:(NSArray *)indexPaths;
+- (void)listViewModel:(MVVMListViewModel *)listViewModel didUpdateModelsAtIndexPaths:(NSArray *)indexPaths;
+- (void)listViewModel:(MVVMListViewModel *)viewModel didMoveModelsAtIndexPaths:(NSArray *)oldIndexPaths toIndexPaths:(NSArray *)newIndexPaths;
+- (void)listViewModelDidEndUpdates:(MVVMListViewModel *)listViewModel;
 
 @end
 
@@ -29,6 +37,19 @@
 
 @end
 
+@protocol MVVMListViewModelFetching <NSObject>
+
+- (PMKPromise *)fetchModelsRemotely;
+- (PMKPromise *)fetchModelsLocally;
+
+@end
+
+@protocol MVVMListViewModelMerging <NSObject>
+
+- (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels;
+
+@end
+
 @protocol MVVMListViewModelSectioning <NSObject>
 
 - (NSArray *)sectionsForModels:(NSArray *)objects;
@@ -42,20 +63,21 @@
 
 @end
 
-typedef void (^MVVMListViewModelResult)();
-
 @interface MVVMListViewModel : MVVMViewModel
   <
   MVVMListViewModelFetching,
   MVVMListViewModelSectioning,
   MVVMListViewModelDataSource,
-  MVVMListViewModelMapping
+  MVVMListViewModelMapping,
+  MVVMListViewModelMerging
   >
+
+@property (nonatomic, weak) id <MVVMListViewModelDelegate> delegate;
 
 - (instancetype)initWithModels:(NSArray *)models;
 
 - (PMKPromise *)fetch;
-- (void)reload;
-- (void)reloadWithModels:(NSArray *)models;
+- (PMKPromise *)reload;
+- (PMKPromise *)reloadWithModels:(NSArray *)models;
 
 @end

@@ -29,36 +29,58 @@
   return self;
 }
 
-#pragma mark - Overridden Methods
+#pragma mark - MVVMListViewModelFetching Methods
 
-- (PMKPromise *)fetchModels {
-  NSAssert(NO, @"Method should be overridden by subclasses");
+- (PMKPromise *)fetchModelsRemotely {
+  return [PMKPromise
+    new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+      fulfill(nil);
+    }];
+}
+
+- (PMKPromise *)fetchModelsLocally {
   return nil;
 }
+
+#pragma mark - MVVMListViewModelMapping Methods
 
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
   NSAssert(NO, @"Method should be overridden by subclasses");
   return nil;
 }
 
+- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
+  return [self indexPathForModel:viewModel.model];
+}
+
+#pragma mark - MVVMListViewModelMerging Methods
+
+- (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels {
+  return nil;
+}
+
 #pragma mark - Public Methods
 
 - (PMKPromise *)fetch {
-  __weak __typeof(self) weakSelf = self;
-  return [self fetchModels]
-    .then(^(NSArray *models) {
-      [weakSelf setMutableModels:models.mutableCopy];
-      [weakSelf reload];
-    });
+//  __weak __typeof(self) weakSelf = self;
+//  return [self fetchModels]
+//    .then(^(NSArray *models) {
+//      [weakSelf reloadWithModels:models];
+//    });
+  return nil;
 }
 
-- (void)reload {
-  [self reloadWithModels:self.mutableModels];
+- (PMKPromise *)reload {
+  return [self reloadWithModels:self.mutableModels];
 }
 
-- (void)reloadWithModels:(NSArray *)models {
-  self.mutableModels = models.mutableCopy;
-  self.sections = [self sectionsForModels:models];
+- (PMKPromise *)reloadWithModels:(NSArray *)models {
+  __typeof(self) __weak weakSelf = self;
+  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+    weakSelf.mutableModels = models.mutableCopy;
+    weakSelf.sections = [weakSelf sectionsForModels:models];
+    fulfill(nil);
+  }];
 }
 
 #pragma mark - MVVMListViewModelSectioning Methods
@@ -117,12 +139,6 @@
     }
   }
   return result;
-}
-
-#pragma mark - MVVMListViewModelMapping
-
-- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
-  return [self indexPathForModel:viewModel.model];
 }
 
 @end
