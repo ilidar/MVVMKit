@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "MVVMListViewModel.h"
+#import "Promise+When.h"
 
 @interface MVVMListViewModel ()
 
@@ -16,7 +17,6 @@
 @property (nonatomic, strong) NSMutableArray *mutableModels;
 
 @end
-
 
 @implementation MVVMListViewModel
 
@@ -32,14 +32,15 @@
 #pragma mark - MVVMListViewModelFetching Methods
 
 - (PMKPromise *)fetchModelsRemotely {
-  return [PMKPromise
-    new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-      fulfill(nil);
-    }];
+  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+    fulfill(nil);
+  }];
 }
 
 - (PMKPromise *)fetchModelsLocally {
-  return nil;
+  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+    fulfill(nil);
+  }];
 }
 
 #pragma mark - MVVMListViewModelMapping Methods
@@ -56,18 +57,22 @@
 #pragma mark - MVVMListViewModelMerging Methods
 
 - (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels {
-  return nil;
+  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+    fulfill(remoteModels);
+  }];
 }
 
 #pragma mark - Public Methods
 
 - (PMKPromise *)fetch {
-//  __weak __typeof(self) weakSelf = self;
-//  return [self fetchModels]
-//    .then(^(NSArray *models) {
-//      [weakSelf reloadWithModels:models];
-//    });
-  return nil;
+  __typeof(self) __weak weakSelf = self;
+  return [PMKPromise when:@[[self fetchModelsRemotely], [self fetchModelsLocally]]]
+    .then(^(NSArray *remoteModels, NSArray *localModels) {
+      return [weakSelf mergeRemoteModels:remoteModels withLocalModels:localModels];
+    })
+    .then(^(NSArray *mergedModels) {
+      return [weakSelf reloadWithModels:mergedModels];
+    });
 }
 
 - (PMKPromise *)reload {
