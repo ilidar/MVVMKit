@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PromiseKit/Promise.h>
 
 #import "MVVMListViewModel.h"
 #import "Promise+When.h"

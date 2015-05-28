@@ -6,10 +6,9 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import <PromiseKit/Promise.h>
-
 #import "MVVMViewModel.h"
 
+@class PMKPromise;
 @class MVVMListViewModel;
 
 @protocol MVVMListViewModelDelegate <NSObject>

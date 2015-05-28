@@ -1,4 +1,5 @@
 PODS:
+  - Kiwi (2.3.1)
   - OMGHTTPURLRQ (2.1):
     - OMGHTTPURLRQ/RQ (= 2.1)
   - OMGHTTPURLRQ/FormURLEncode (2.1)
@@ -42,9 +43,11 @@ PODS:
     - PromiseKit/Promise
 
 DEPENDENCIES:
+  - Kiwi
   - PromiseKit (= 1.5.3)
 
 SPEC CHECKSUMS:
+  Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
   PromiseKit: 7ecae7c190ab92ae00aae6ba7f88942107532b8f
 
