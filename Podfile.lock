@@ -1,23 +1,24 @@
 PODS:
+  - Functional (0.0.2)
   - Kiwi (2.3.1)
   - OMGHTTPURLRQ (2.1):
-    - OMGHTTPURLRQ/RQ (= 2.1)
+    - OMGHTTPURLRQ/RQ
   - OMGHTTPURLRQ/FormURLEncode (2.1)
   - OMGHTTPURLRQ/RQ (2.1):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (2.1)
   - PromiseKit (1.5.3):
-    - PromiseKit/CALayer (= 1.5.3)
-    - PromiseKit/NSNotificationCenter (= 1.5.3)
-    - PromiseKit/NSURLConnection (= 1.5.3)
-    - PromiseKit/Pause (= 1.5.3)
-    - PromiseKit/UIActionSheet (= 1.5.3)
-    - PromiseKit/UIAlertView (= 1.5.3)
-    - PromiseKit/UIView (= 1.5.3)
-    - PromiseKit/UIViewController (= 1.5.3)
-    - PromiseKit/Until (= 1.5.3)
-    - PromiseKit/When (= 1.5.3)
+    - PromiseKit/CALayer
+    - PromiseKit/NSNotificationCenter
+    - PromiseKit/NSURLConnection
+    - PromiseKit/Pause
+    - PromiseKit/UIActionSheet
+    - PromiseKit/UIAlertView
+    - PromiseKit/UIView
+    - PromiseKit/UIViewController
+    - PromiseKit/Until
+    - PromiseKit/When
   - PromiseKit/CALayer (1.5.3):
     - PromiseKit/Promise
   - PromiseKit/NSNotificationCenter (1.5.3):
@@ -43,12 +44,18 @@ PODS:
     - PromiseKit/Promise
 
 DEPENDENCIES:
+  - Functional (from `https://github.com/ilidar/Functional.git`)
   - Kiwi
   - PromiseKit (= 1.5.3)
 
+EXTERNAL SOURCES:
+  Functional:
+    :git: https://github.com/ilidar/Functional.git
+
 SPEC CHECKSUMS:
+  Functional: dcfc9e1c3b03f90009de413f0e8c7c562737f0ad
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
   PromiseKit: 7ecae7c190ab92ae00aae6ba7f88942107532b8f
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.34.4

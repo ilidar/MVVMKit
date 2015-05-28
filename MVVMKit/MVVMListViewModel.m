@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <PromiseKit/Promise.h>
+#import <Functional/Functional.h>
 
 #import "MVVMListViewModel.h"
 #import "Promise+When.h"
@@ -118,16 +119,9 @@
 }
 
 - (NSArray *)indexPathsForModels:(NSArray *)models {
-  NSMutableArray *result = [NSMutableArray new];
-  for (MVVMModel *model in models) {
-    NSIndexPath *indexPath = [self indexPathForModel:model];
-    if (indexPath) {
-      [result addObject:indexPath];
-    } else {
-      [result addObject:[NSNull null]];
-    }
-  }
-  return result;
+  return [models map:^id(id model) {
+    return [self indexPathForModel:model] ?: [NSNull null];
+  }];
 }
 
 - (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath {
@@ -135,16 +129,9 @@
 }
 
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths {
-  NSMutableArray *result = [NSMutableArray new];
-  for (NSIndexPath *indexPath in indexPaths) {
-    MVVMModel *model = [self modelAtIndexPath:indexPath];
-    if (model) {
-      [result addObject:model];
-    } else {
-      [result addObject:[NSNull null]];
-    }
-  }
-  return result;
+  return [indexPaths map:^id(NSIndexPath *indexPath) {
+    return [self modelAtIndexPath:indexPath] ?: [NSNull null];
+  }];
 }
 
 @end
