@@ -21,15 +21,31 @@
 
 SPEC_BEGIN(MVVMListViewModelSpec)
   describe(@"MVVMListViewModel", ^{
-    context(@"Fetching", ^{
-      it(@"Should create valid view model instances", ^{
-        NSArray *models = @[ @1, @2, @3, @4 ];
-        MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithModels:models];
+    context(@"Validating", ^{
+      NSArray *models = @[ @1, @2, @3, @4 ];
+      MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithModels:models];
+
+      it(@"Should create proper view model instances", ^{
         listViewModel.viewModelsClass = [MVVMViewModelTest class];
         id viewModel = [listViewModel viewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [[viewModel should] beKindOfClass:[MVVMViewModelTest class]];
       });
 
+      it(@"Should return proper index paths", ^{
+        for (NSUInteger i = 0; i < models.count; ++i) {
+          id model = models[i];
+          NSIndexPath *indexPath = [listViewModel indexPathForModel:model];
+          [[indexPath should] equal:[NSIndexPath indexPathForRow:i inSection:0]];
+        }
+        NSArray *indexPaths = [listViewModel indexPathsForModels:models];
+        [[theValue(indexPaths.count) should] equal:theValue(models.count)];
+        for (NSUInteger i = 0; i < indexPaths.count; ++i) {
+          [[indexPaths[i] should] equal:[NSIndexPath indexPathForRow:i inSection:0]];
+        }
+      });
+    });
+
+    context(@"Fetching", ^{
       it(@"Should eventually exit fetching block", ^{
         __block BOOL finished = NO;
         MVVMListViewModel *viewModel = [[MVVMListViewModel alloc] init];
