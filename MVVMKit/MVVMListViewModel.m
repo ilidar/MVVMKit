@@ -22,6 +22,13 @@
 
 @implementation MVVMListViewModel
 
+#pragma mark - Static Methods
+
++ (Class)MVVMViewModelGenerationClass {
+  NSAssert(NO, @"Method should be overridden by subclasses");
+  return nil;
+}
+
 #pragma mark - Init Methods
 
 - (instancetype)initWithModels:(NSArray *)models {
@@ -48,7 +55,11 @@
 #pragma mark - MVVMListViewModelMapping Methods
 
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
-  NSAssert(NO, @"Method should be overridden by subclasses");
+  id model = [self modelAtIndexPath:indexPath];
+  Class MVVMViewModelClass = [[self class] MVVMViewModelGenerationClass];
+  if ([MVVMViewModelClass instancesRespondToSelector:@selector(initWithModel:)]) {
+    return [(id) [MVVMViewModelClass alloc] initWithModel:model];
+  }
   return nil;
 }
 
@@ -69,7 +80,9 @@
 - (PMKPromise *)fetch {
   __typeof(self) __weak weakSelf = self;
   return [PMKPromise when:@[[self fetchModelsRemotely], [self fetchModelsLocally]]]
-    .then(^(NSArray *remoteModels, NSArray *localModels) {
+    .then(^(NSArray *results) {
+      NSArray *remoteModels = results.count > 0 ? results[0] : nil;
+      NSArray *localModels = results.count > 1 ? results[1] : nil;
       return [weakSelf mergeRemoteModels:remoteModels withLocalModels:localModels];
     })
     .then(^(NSArray *mergedModels) {

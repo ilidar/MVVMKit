@@ -73,6 +73,8 @@
 
 @property (nonatomic, weak) id <MVVMListViewModelDelegate> delegate;
 
++ (Class)MVVMViewModelGenerationClass;
+
 - (instancetype)initWithModels:(NSArray *)models;
 
 - (PMKPromise *)fetch;
