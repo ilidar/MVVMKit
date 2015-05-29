@@ -18,30 +18,21 @@
 @implementation MVVMViewModelTest
 @end
 
-@interface MVVMListViewModelTest : MVVMListViewModel
-@end
-
-@implementation MVVMListViewModelTest
-
-+ (Class)MVVMViewModelGenerationClass {
-  return [MVVMViewModelTest class];
-}
-
-@end
 
 SPEC_BEGIN(MVVMListViewModelSpec)
   describe(@"MVVMListViewModel", ^{
     context(@"Fetching", ^{
       it(@"Should create valid view model instances", ^{
         NSArray *models = @[ @1, @2, @3, @4 ];
-        MVVMListViewModelTest *listViewModel = [[MVVMListViewModelTest alloc] initWithModels:models];
+        MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithModels:models];
+        listViewModel.viewModelsClass = [MVVMViewModelTest class];
         id viewModel = [listViewModel viewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [[viewModel should] beKindOfClass:[MVVMViewModelTest class]];
       });
 
       it(@"Should eventually exit fetching block", ^{
         __block BOOL finished = NO;
-        MVVMListViewModelTest *viewModel = [[MVVMListViewModelTest alloc] init];
+        MVVMListViewModel *viewModel = [[MVVMListViewModel alloc] init];
         [viewModel fetch]
           .finally(^{
             finished = YES;

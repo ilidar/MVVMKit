@@ -56,15 +56,20 @@
 
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
   id model = [self modelAtIndexPath:indexPath];
-  Class MVVMViewModelClass = [[self class] MVVMViewModelGenerationClass];
-  if ([MVVMViewModelClass instancesRespondToSelector:@selector(initWithModel:)]) {
-    return [(id) [MVVMViewModelClass alloc] initWithModel:model];
+  Class viewModelClass = [self viewModelClassAtIndexPath:indexPath];
+  if ([viewModelClass instancesRespondToSelector:@selector(initWithModel:)]) {
+    return [(id) [viewModelClass alloc] initWithModel:model];
   }
   return nil;
 }
 
 - (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
   return [self indexPathForModel:viewModel.model];
+}
+
+- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath {
+  NSAssert(self.viewModelsClass != nil, @"self.viewModelsClass should be preset");
+  return self.viewModelsClass;
 }
 
 #pragma mark - MVVMListViewModelMerging Methods

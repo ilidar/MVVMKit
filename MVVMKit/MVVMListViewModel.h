@@ -33,6 +33,7 @@
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths;
 - (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)model;
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath;
+- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -72,8 +73,7 @@
   >
 
 @property (nonatomic, weak) id <MVVMListViewModelDelegate> delegate;
-
-+ (Class)MVVMViewModelGenerationClass;
+@property (nonatomic, assign) Class viewModelsClass;
 
 - (instancetype)initWithModels:(NSArray *)models;
 
