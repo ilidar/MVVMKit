@@ -19,7 +19,6 @@
 		452553271AF953CF006A0BEA /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
 		4525532A1AF962EA006A0BEA /* MVVMController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4525532B1AF962EA006A0BEA /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
-		45CACCAF1B17C56F00E36FBA /* MVVMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; };
 		45CACCBA1B17C9F400E36FBA /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelSpec.m */; };
 		72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */; };
 /* End PBXBuildFile section */
@@ -76,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45CACCAF1B17C56F00E36FBA /* MVVMKit.framework in Frameworks */,
 				72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
