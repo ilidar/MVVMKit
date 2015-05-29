@@ -1,0 +1,3 @@
+language: objective-c
+xcode_workspace: MVVMKit.xcworkspace
+xcode_scheme: MVVMKitTests
