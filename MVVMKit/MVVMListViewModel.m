@@ -22,13 +22,6 @@
 
 @implementation MVVMListViewModel
 
-#pragma mark - Static Methods
-
-+ (Class)MVVMViewModelGenerationClass {
-  NSAssert(NO, @"Method should be overridden by subclasses");
-  return nil;
-}
-
 #pragma mark - Init Methods
 
 - (instancetype)initWithModels:(NSArray *)models {
