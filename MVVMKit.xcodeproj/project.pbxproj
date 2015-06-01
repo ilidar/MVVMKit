@@ -19,6 +19,7 @@
 		452553271AF953CF006A0BEA /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
 		4525532A1AF962EA006A0BEA /* MVVMController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4525532B1AF962EA006A0BEA /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
+		457F520C1B1C69B4000D322D /* MVVMKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45CACCBA1B17C9F400E36FBA /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelSpec.m */; };
 		72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,19 @@
 			remoteInfo = MVVMKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		457F520B1B1C69A6000D322D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				457F520C1B1C69B4000D322D /* MVVMKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0742C42304D1726F65088263 /* Pods-MVVMKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKitTests/Pods-MVVMKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +233,7 @@
 				45CACCA61B17C56F00E36FBA /* Frameworks */,
 				45CACCA71B17C56F00E36FBA /* Resources */,
 				15471D7D38B0C05C7011F14E /* Copy Pods Resources */,
+				457F520B1B1C69A6000D322D /* CopyFiles */,
 			);
 			buildRules = (
 			);
