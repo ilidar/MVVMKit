@@ -11,18 +11,6 @@
 @class PMKPromise;
 @class MVVMListViewModel;
 
-@protocol MVVMListViewModelDelegate <NSObject>
-
- @optional
-- (void)listViewModelDidBeginUpdates:(MVVMListViewModel *)listViewModel;
-- (void)listViewModel:(MVVMListViewModel *)listViewModel didInsertModelsAtIndexPaths:(NSArray *)indexPaths;
-- (void)listViewModel:(MVVMListViewModel *)listViewModel didDeleteModelsAtIndexPaths:(NSArray *)indexPaths;
-- (void)listViewModel:(MVVMListViewModel *)listViewModel didUpdateModelsAtIndexPaths:(NSArray *)indexPaths;
-- (void)listViewModel:(MVVMListViewModel *)viewModel didMoveModelsAtIndexPaths:(NSArray *)oldIndexPaths toIndexPaths:(NSArray *)newIndexPaths;
-- (void)listViewModelDidEndUpdates:(MVVMListViewModel *)listViewModel;
-
-@end
-
 @protocol MVVMListViewModelDataSource <NSObject>
 
 - (NSInteger)numberOfSections;
@@ -72,7 +60,6 @@
   MVVMListViewModelMerging
   >
 
-@property (nonatomic, weak) id <MVVMListViewModelDelegate> delegate;
 @property (nonatomic, assign) Class viewModelsClass;
 
 - (instancetype)initWithModels:(NSArray *)models;
