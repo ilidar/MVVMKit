@@ -5,4 +5,5 @@ pod 'Functional', :git => 'https://github.com/ilidar/Functional.git'
 
 target :MVVMKitTests, :exclusive => true do
   pod 'Kiwi'
+  pod 'MagicalRecord'
 end
