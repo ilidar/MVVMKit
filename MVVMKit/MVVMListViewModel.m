@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PromiseKit/Promise.h>
-#import <Functional/Functional.h>
+#import <PromiseKit/Promise+When.h>
 
 #import "MVVMListViewModel.h"
-#import "Promise+When.h"
+#import "MVVMDataSourceInMemory.h"
 
 @interface MVVMListViewModel ()
 
-@property (nonatomic, strong) NSArray *sections;
-@property (nonatomic, strong) NSMutableArray *mutableModels;
+@property (nonatomic, strong) id <MVVMListViewModelDataSource> dataSource;
 
 @end
 
@@ -24,10 +22,10 @@
 
 #pragma mark - Init Methods
 
-- (instancetype)initWithModels:(NSArray *)models {
-  self = [super init];
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource {
+  self = [self init];
   if (!self) return nil;
-  [self reloadWithModels:models];
+  self.dataSource = dataSource;
   return self;
 }
 
@@ -43,26 +41,6 @@
   return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
     fulfill(nil);
   }];
-}
-
-#pragma mark - MVVMListViewModelMapping Methods
-
-- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
-  id model = [self modelAtIndexPath:indexPath];
-  Class viewModelClass = [self viewModelClassAtIndexPath:indexPath];
-  if ([viewModelClass instancesRespondToSelector:@selector(initWithModel:)]) {
-    return [(id) [viewModelClass alloc] initWithModel:model];
-  }
-  return nil;
-}
-
-- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
-  return [self indexPathForModel:viewModel.model];
-}
-
-- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath {
-  NSAssert(self.viewModelsClass != nil, @"self.viewModelsClass should be preset");
-  return self.viewModelsClass;
 }
 
 #pragma mark - MVVMListViewModelMerging Methods
@@ -92,61 +70,54 @@
     });
 }
 
-- (PMKPromise *)reload {
-  return [self reloadWithModels:self.mutableModels];
-}
-
-- (PMKPromise *)reloadWithModels:(NSArray *)models {
-  __typeof(self) __weak weakSelf = self;
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    weakSelf.mutableModels = models.mutableCopy;
-    weakSelf.sections = [weakSelf sectionsForModels:models];
-    fulfill(nil);
-  }];
-}
-
-#pragma mark - MVVMListViewModelSectioning Methods
-
-- (NSArray *)sectionsForModels:(NSArray *)models {
-  return @[ models ];
-}
-
 #pragma mark - MVVMListViewModelDataSource Methods
 
 - (NSInteger)numberOfSections {
-  return self.sections.count;
+  return [self.dataSource numberOfSections];
 }
 
 - (NSInteger)numberOfRowsInSection:(NSInteger)section {
-  return [self.sections[(NSUInteger) section] count];
+  return [self.dataSource numberOfRowsInSection:section];
 }
 
 - (NSIndexPath *)indexPathForModel:(MVVMModel *)model {
-  __block NSIndexPath *indexPath = nil;
-  [self.sections enumerateObjectsUsingBlock:^(NSArray *section, NSUInteger sectionIndex, BOOL *stop) {
-    NSUInteger rowIndex = [section indexOfObject:model];
-    if (rowIndex != NSNotFound) {
-      indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
-      *stop = YES;
-    }
-  }];
-  return indexPath;
+  return [self.dataSource indexPathForModel:model];
 }
 
 - (NSArray *)indexPathsForModels:(NSArray *)models {
-  return [models map:^id(id model) {
-    return [self indexPathForModel:model] ?: [NSNull null];
-  }];
+  return [self.dataSource indexPathsForModels:models];
 }
 
 - (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath {
-  return self.sections[(NSUInteger) indexPath.section][(NSUInteger) indexPath.row];
+  return [self.dataSource modelAtIndexPath:indexPath];
 }
 
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths {
-  return [indexPaths map:^id(NSIndexPath *indexPath) {
-    return [self modelAtIndexPath:indexPath] ?: [NSNull null];
-  }];
+  return [self.dataSource modelsAtIndexPaths:indexPaths];
+}
+
+- (PMKPromise *)reloadWithModels:(NSArray *)models {
+  return [self.dataSource reloadWithModels:models];
+}
+
+#pragma mark - MVVMListViewModelMapping Methods
+
+- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath {
+  id model = [self modelAtIndexPath:indexPath];
+  Class viewModelClass = [self viewModelClassAtIndexPath:indexPath];
+  if ([viewModelClass instancesRespondToSelector:@selector(initWithModel:)]) {
+    return [(id) [viewModelClass alloc] initWithModel:model];
+  }
+  return nil;
+}
+
+- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel {
+  return [self indexPathForModel:viewModel.model];
+}
+
+- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath {
+  NSAssert(self.viewModelsClass != nil, @"self.viewModelsClass should be preset");
+  return self.viewModelsClass;
 }
 
 @end

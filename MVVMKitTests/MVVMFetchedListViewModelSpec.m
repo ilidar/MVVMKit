@@ -12,13 +12,14 @@
 #import <PromiseKit/PromiseKit.h>
 
 #import "MVVMFeed.h"
-#import "MVVMFetchedListViewModel.h"
+#import "MVVMListViewModel.h"
+#import "MVVMDataSourceFetchedResults.h"
 
 SPEC_BEGIN(MVVMFetchedListViewModelSpec)
   describe(@"MVVMFetchedListViewModel", ^{
     context(@"Fetching", ^{
       __block NSInteger numberOfModels;
-      __block MVVMFetchedListViewModel *viewModel;
+      __block MVVMListViewModel *viewModel;
 
       beforeAll(^{
         [MagicalRecord setDefaultModelFromClass:[self class]];
@@ -35,8 +36,10 @@ SPEC_BEGIN(MVVMFetchedListViewModelSpec)
         NSFetchedResultsController *fetchedResultsController =
           [MVVMFeed MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"feedID" ascending:YES];
 
-        viewModel = [[MVVMFetchedListViewModel alloc]
-          initWithFetchController:fetchedResultsController];
+        id <MVVMListViewModelDataSource> dataSource = [[MVVMDataSourceFetchedResults alloc]
+          initWithFetchedResultsController:fetchedResultsController];
+
+        viewModel = [[MVVMListViewModel alloc] initWithDataSource:dataSource];
       });
 
       it(@"Should have initialized", ^{

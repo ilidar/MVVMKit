@@ -6,6 +6,8 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "MVVMViewModel.h"
 
 @class PMKPromise;
@@ -19,9 +21,7 @@
 - (NSArray *)indexPathsForModels:(NSArray *)models;
 - (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths;
-- (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)model;
-- (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath;
-- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath;
+- (PMKPromise *)reloadWithModels:(NSArray *)models;
 
 @end
 
@@ -38,34 +38,27 @@
 
 @end
 
-@protocol MVVMListViewModelSectioning <NSObject>
-
-- (NSArray *)sectionsForModels:(NSArray *)objects;
-
-@end
-
 @protocol MVVMListViewModelMapping <NSObject>
 
 - (NSIndexPath *)indexPathForViewModel:(MVVMViewModel *)viewModel;
 - (MVVMViewModel *)viewModelAtIndexPath:(NSIndexPath *)indexPath;
+- (Class)viewModelClassAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
 @interface MVVMListViewModel : MVVMViewModel
   <
   MVVMListViewModelFetching,
-  MVVMListViewModelSectioning,
+  MVVMListViewModelMerging,
   MVVMListViewModelDataSource,
-  MVVMListViewModelMapping,
-  MVVMListViewModelMerging
+  MVVMListViewModelMapping
   >
 
 @property (nonatomic, assign) Class viewModelsClass;
+@property (nonatomic, strong, readonly) id <MVVMListViewModelDataSource> dataSource;
 
-- (instancetype)initWithModels:(NSArray *)models;
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource;
 
 - (PMKPromise *)fetch;
-- (PMKPromise *)reload;
-- (PMKPromise *)reloadWithModels:(NSArray *)models;
 
 @end

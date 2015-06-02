@@ -11,6 +11,7 @@
 #import <Kiwi/Kiwi.h>
 
 #import "MVVMListViewModel.h"
+#import "MVVMDataSourceInMemory.h"
 
 @interface MVVMViewModelTest : MVVMViewModel
 @end
@@ -18,12 +19,13 @@
 @implementation MVVMViewModelTest
 @end
 
-
 SPEC_BEGIN(MVVMListViewModelSpec)
   describe(@"MVVMListViewModel", ^{
     context(@"Validating", ^{
       NSArray *models = @[ @1, @2, @3, @4 ];
-      MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithModels:models];
+
+      id <MVVMListViewModelDataSource> dataSource = [[MVVMDataSourceInMemory alloc] initWithModels:models];
+      MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithDataSource:dataSource];
 
       it(@"Should create proper view model instances", ^{
         listViewModel.viewModelsClass = [MVVMViewModelTest class];
