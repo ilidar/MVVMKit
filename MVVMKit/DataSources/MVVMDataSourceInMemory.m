@@ -55,8 +55,9 @@
 }
 
 - (NSArray *)indexPathsForModels:(NSArray *)models {
+  __typeof(self) __weak weakSelf = self;
   return [models map:^id(id model) {
-    return [self indexPathForModel:model] ?: [NSNull null];
+    return [weakSelf indexPathForModel:model] ?: [NSNull null];
   }];
 }
 
@@ -65,8 +66,9 @@
 }
 
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths {
+  __typeof(self) __weak weakSelf = self;
   return [indexPaths map:^id(NSIndexPath *indexPath) {
-    return [self modelAtIndexPath:indexPath] ?: [NSNull null];
+    return [weakSelf modelAtIndexPath:indexPath] ?: [NSNull null];
   }];
 }
 
