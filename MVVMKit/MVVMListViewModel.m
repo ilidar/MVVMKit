@@ -69,7 +69,11 @@
 
 - (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels {
   return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    fulfill(remoteModels);
+    if ([remoteModels isKindOfClass:[NSArray class]]) {
+      fulfill(remoteModels);
+    } else {
+      fulfill(localModels);
+    }
   }];
 }
 

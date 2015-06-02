@@ -49,7 +49,7 @@ SPEC_BEGIN(MVVMFetchedListViewModelSpec)
           .then(^{
             fetchedNumberOfModels = [viewModel numberOfRowsInSection:0];
           });
-        [[theValue(fetchedNumberOfModels) shouldEventually] equal:theValue(numberOfModels)];
+        [[expectFutureValue(theValue(fetchedNumberOfModels)) shouldEventually] equal:theValue(numberOfModels)];
       });
 
       afterAll(^{
