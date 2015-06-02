@@ -8,8 +8,9 @@ Pod::Spec.new do |s|
   s.author        = { "Denys Kotelovych" => "" }
   s.source        = { :git => "https://github.com/ilidar/MVVMKit.git", :tag => "0.0.5-beta" }
   s.platform      = :ios, "8.3"
-  s.source_files  = "MVVMKit", "MVVMKit/*.{h,m}"
+  s.source_files  = "MVVMKit/**/*.{h,m}"
   s.requires_arc  = true
 
   s.dependency 'PromiseKit', '1.5.3'
+  s.dependency 'Functional'
 end
