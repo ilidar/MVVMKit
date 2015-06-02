@@ -22,7 +22,7 @@
 #pragma mark - Init Methods
 
 - (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource {
-  self = [self init];
+  self = [super init];
   if (!self) return nil;
   self.dataSource = dataSource;
   return self;
