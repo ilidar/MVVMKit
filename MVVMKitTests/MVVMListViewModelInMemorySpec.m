@@ -1,5 +1,5 @@
 //
-//  MVVMListViewModelSpec.m
+//  MVVMListViewModelInMemorySpec.m
 //  MVVMKit
 //
 //  Created by Denys Kotelovych on 5/29/15.
@@ -18,7 +18,7 @@
 @implementation MVVMViewModelTest
 @end
 
-SPEC_BEGIN(MVVMListViewModelSpec)
+SPEC_BEGIN(MVVMListViewModelInMemorySpec)
   describe(@"MVVMListViewModel", ^{
     context(@"Validating", ^{
       NSArray *models = @[ @1, @2, @3, @4 ];

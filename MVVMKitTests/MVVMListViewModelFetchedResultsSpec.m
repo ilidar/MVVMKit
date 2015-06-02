@@ -1,5 +1,5 @@
 //
-//  MVVMFetchedListViewModelSpec.m
+//  MVVMListViewModelFetchedResultsSpec.m
 //  MVVMKit
 //
 //  Created by Denys Kotelovych on 6/1/15.
@@ -14,7 +14,7 @@
 #import "MVVMFeed.h"
 #import "MVVMDataSourceFetchedResults.h"
 
-SPEC_BEGIN(MVVMFetchedListViewModelSpec)
+SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
   describe(@"MVVMFetchedListViewModel", ^{
     context(@"Fetching", ^{
       __block NSInteger numberOfModels;
