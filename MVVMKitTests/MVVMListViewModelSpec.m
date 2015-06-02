@@ -10,7 +10,6 @@
 #import <PromiseKit/PromiseKit.h>
 #import <Kiwi/Kiwi.h>
 
-#import "MVVMListViewModel.h"
 #import "MVVMDataSourceInMemory.h"
 
 @interface MVVMViewModelTest : MVVMViewModel

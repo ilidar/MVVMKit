@@ -6,8 +6,6 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 #import "MVVMViewModel.h"
 
 @class PMKPromise;

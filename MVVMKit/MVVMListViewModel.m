@@ -10,7 +10,6 @@
 #import <PromiseKit/Promise+When.h>
 
 #import "MVVMListViewModel.h"
-#import "MVVMDataSourceInMemory.h"
 
 @interface MVVMListViewModel ()
 

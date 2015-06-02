@@ -8,33 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		081CEDB9B2DE5B8DC0591921 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 980FCD7DF794728159475283 /* libPods.a */; };
-		2E94426E3524670E5197B158 /* MVVMLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944848E130A2C845FA550B /* MVVMLogging.h */; };
-		2E944349AAE32E461F8DF8AD /* MVVMCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944460289775E7A2B25D6B /* MVVMCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E9443DF62F631CB7659D356 /* MVVMListViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9449BB6595631DDA589E68 /* MVVMListViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E944600DC0E4C05A3142F23 /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
-		2E9449FF4925D43F088E3B28 /* MVVMDataSourceInMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9445B0FEEF470DC92A891D /* MVVMDataSourceInMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E944C0E7233E721B78D1E76 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
 		2E944CECD9360C00926D8E01 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
-		2E944F0A5B6EA1988C27255E /* MVVMDataSourceFetchedResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E94463FB4F50149ACF19A93 /* MVVMDataSourceFetchedResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E944F77A6326EAA0E8B2B79 /* MVVMDataSourceInMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */; };
-		2E944FBA98065A4320CE5D0D /* MVVMListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944258FEED406107C40EB9 /* MVVMListController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4525530A1AF95298006A0BEA /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		452553221AF953B1006A0BEA /* MVVMModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553201AF953B1006A0BEA /* MVVMModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		452553261AF953CF006A0BEA /* MVVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553241AF953CF006A0BEA /* MVVMViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		452553271AF953CF006A0BEA /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
-		4525532A1AF962EA006A0BEA /* MVVMController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4525532B1AF962EA006A0BEA /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
 		45452D391B1D681F00AEA113 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45452D371B1D681F00AEA113 /* Model.xcdatamodeld */; };
 		45452D451B1D6A0A00AEA113 /* MVVMFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 45452D441B1D6A0A00AEA113 /* MVVMFeed.m */; };
-		45452D461B1D88D200AEA113 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
-		45452D471B1D88D200AEA113 /* MVVMDataSourceInMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */; };
-		457F520C1B1C69B4000D322D /* MVVMKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		457F520D1B1C7632000D322D /* MVVMFetchedListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445394EC86AD58036AE71 /* MVVMFetchedListViewModelSpec.m */; };
-		457F520E1B1C7662000D322D /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
-		457F52101B1C7662000D322D /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
-		457F52111B1C7662000D322D /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
-		457F52121B1C7662000D322D /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
-		45CACCBA1B17C9F400E36FBA /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelSpec.m */; };
+		45452D4B1B1D90D400AEA113 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
+		45452D4C1B1D90D400AEA113 /* MVVMDataSourceInMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */; };
+		45452D4D1B1D90D400AEA113 /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
+		45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
+		45452D4F1B1D90D400AEA113 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
+		45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
+		45452D511B1D918100AEA113 /* MVVMDataSourceFetchedResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E94463FB4F50149ACF19A93 /* MVVMDataSourceFetchedResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D521B1D918100AEA113 /* MVVMDataSourceInMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9445B0FEEF470DC92A891D /* MVVMDataSourceInMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D531B1D918100AEA113 /* MVVMCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944460289775E7A2B25D6B /* MVVMCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D541B1D918100AEA113 /* MVVMController.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553281AF962EA006A0BEA /* MVVMController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D561B1D918100AEA113 /* MVVMListController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944258FEED406107C40EB9 /* MVVMListController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D571B1D918100AEA113 /* MVVMListViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9449BB6595631DDA589E68 /* MVVMListViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D581B1D918100AEA113 /* MVVMModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553201AF953B1006A0BEA /* MVVMModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D591B1D918100AEA113 /* MVVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553241AF953CF006A0BEA /* MVVMViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelSpec.m */; };
+		45452D5F1B1D9ABD00AEA113 /* MVVMFetchedListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445394EC86AD58036AE71 /* MVVMFetchedListViewModelSpec.m */; };
+		45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		45BE92601B1D9F570079A3B0 /* MVVMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; };
 		72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -47,19 +46,6 @@
 			remoteInfo = MVVMKit;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		457F520B1B1C69A6000D322D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				457F520C1B1C69B4000D322D /* MVVMKit.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0742C42304D1726F65088263 /* Pods-MVVMKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKitTests/Pods-MVVMKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +71,8 @@
 		45452D381B1D681F00AEA113 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		45452D431B1D6A0A00AEA113 /* MVVMFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMFeed.h; sourceTree = "<group>"; };
 		45452D441B1D6A0A00AEA113 /* MVVMFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMFeed.m; sourceTree = "<group>"; };
+		45452D5A1B1D931700AEA113 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		45452D5C1B1D931D00AEA113 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		45CACCA91B17C56F00E36FBA /* MVVMKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CACCAC1B17C56F00E36FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CACCB51B17C8E100E36FBA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
@@ -112,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45BE92601B1D9F570079A3B0 /* MVVMKit.framework in Frameworks */,
 				72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +200,8 @@
 		B0001F6BE40D3F159801EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45452D5C1B1D931D00AEA113 /* CoreData.framework */,
+				45452D5A1B1D931700AEA113 /* Foundation.framework */,
 				45CACCB51B17C8E100E36FBA /* libPods.a */,
 				970664E0881A2A04603A0A28 /* libPods-MVVMKit.a */,
 				980FCD7DF794728159475283 /* libPods.a */,
@@ -239,16 +230,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4525532A1AF962EA006A0BEA /* MVVMController.h in Headers */,
-				2E944F0A5B6EA1988C27255E /* MVVMDataSourceFetchedResults.h in Headers */,
-				2E9449FF4925D43F088E3B28 /* MVVMDataSourceInMemory.h in Headers */,
-				452553221AF953B1006A0BEA /* MVVMModel.h in Headers */,
-				4525530A1AF95298006A0BEA /* MVVMKit.h in Headers */,
-				452553261AF953CF006A0BEA /* MVVMViewModel.h in Headers */,
-				2E944FBA98065A4320CE5D0D /* MVVMListController.h in Headers */,
-				2E944349AAE32E461F8DF8AD /* MVVMCell.h in Headers */,
-				2E9443DF62F631CB7659D356 /* MVVMListViewModel.h in Headers */,
-				2E94426E3524670E5197B158 /* MVVMLogging.h in Headers */,
+				45452D511B1D918100AEA113 /* MVVMDataSourceFetchedResults.h in Headers */,
+				45452D521B1D918100AEA113 /* MVVMDataSourceInMemory.h in Headers */,
+				45452D531B1D918100AEA113 /* MVVMCell.h in Headers */,
+				45452D541B1D918100AEA113 /* MVVMController.h in Headers */,
+				45452D561B1D918100AEA113 /* MVVMListController.h in Headers */,
+				45452D571B1D918100AEA113 /* MVVMListViewModel.h in Headers */,
+				45452D581B1D918100AEA113 /* MVVMModel.h in Headers */,
+				45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */,
+				45452D591B1D918100AEA113 /* MVVMViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +274,6 @@
 				45CACCA61B17C56F00E36FBA /* Frameworks */,
 				45CACCA71B17C56F00E36FBA /* Resources */,
 				15471D7D38B0C05C7011F14E /* Copy Pods Resources */,
-				457F520B1B1C69A6000D322D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -430,16 +419,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				457F52121B1C7662000D322D /* MVVMViewModel.m in Sources */,
-				45CACCBA1B17C9F400E36FBA /* MVVMListViewModelSpec.m in Sources */,
-				457F52101B1C7662000D322D /* MVVMListController.m in Sources */,
 				45452D391B1D681F00AEA113 /* Model.xcdatamodeld in Sources */,
+				45452D5F1B1D9ABD00AEA113 /* MVVMFetchedListViewModelSpec.m in Sources */,
+				45452D4C1B1D90D400AEA113 /* MVVMDataSourceInMemory.m in Sources */,
 				45452D451B1D6A0A00AEA113 /* MVVMFeed.m in Sources */,
-				457F520E1B1C7662000D322D /* MVVMController.m in Sources */,
-				457F52111B1C7662000D322D /* MVVMListViewModel.m in Sources */,
-				457F520D1B1C7632000D322D /* MVVMFetchedListViewModelSpec.m in Sources */,
-				45452D471B1D88D200AEA113 /* MVVMDataSourceInMemory.m in Sources */,
-				45452D461B1D88D200AEA113 /* MVVMDataSourceFetchedResults.m in Sources */,
+				45452D4F1B1D90D400AEA113 /* MVVMListViewModel.m in Sources */,
+				45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */,
+				45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */,
+				45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelSpec.m in Sources */,
+				45452D4B1B1D90D400AEA113 /* MVVMDataSourceFetchedResults.m in Sources */,
+				45452D4D1B1D90D400AEA113 /* MVVMController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,14 +573,10 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
@@ -606,7 +591,7 @@
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/** \"${PROJECT_DIR}/Pods\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};

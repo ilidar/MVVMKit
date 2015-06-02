@@ -7,9 +7,9 @@
 //
 
 #import <Functional/Functional.h>
+#import <PromiseKit/Promise.h>
 
 #import "MVVMDataSourceInMemory.h"
-#import "Promise.h"
 
 @interface MVVMDataSourceInMemory ()
 

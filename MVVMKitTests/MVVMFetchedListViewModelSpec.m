@@ -12,7 +12,6 @@
 #import <PromiseKit/PromiseKit.h>
 
 #import "MVVMFeed.h"
-#import "MVVMListViewModel.h"
 #import "MVVMDataSourceFetchedResults.h"
 
 SPEC_BEGIN(MVVMFetchedListViewModelSpec)
@@ -37,7 +36,7 @@ SPEC_BEGIN(MVVMFetchedListViewModelSpec)
           [MVVMFeed MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"feedID" ascending:YES];
 
         id <MVVMListViewModelDataSource> dataSource = [[MVVMDataSourceFetchedResults alloc]
-          initWithFetchedResultsController:fetchedResultsController];
+          initWithController:fetchedResultsController];
 
         viewModel = [[MVVMListViewModel alloc] initWithDataSource:dataSource];
       });

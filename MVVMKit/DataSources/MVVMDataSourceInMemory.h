@@ -6,8 +6,6 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import "MVVMListViewModel.h"
 
 @interface MVVMDataSourceInMemory : NSObject <MVVMListViewModelDataSource>

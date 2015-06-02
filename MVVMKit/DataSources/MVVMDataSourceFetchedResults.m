@@ -21,7 +21,7 @@
 
 #pragma mark - Init Methods
 
-- (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController {
+- (instancetype)initWithController:(NSFetchedResultsController *)fetchedResultsController {
   self = [super init];
   if (!self) return nil;
   self.fetchedResultsController = fetchedResultsController;

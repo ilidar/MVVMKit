@@ -6,7 +6,6 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
 #import "MVVMListViewModel.h"
@@ -15,6 +14,6 @@
 
 @property (nonatomic, strong, readonly) NSFetchedResultsController *fetchedResultsController;
 
-- (instancetype)initWithFetchedResultsController:(NSFetchedResultsController *)fetchedResultsController;
+- (instancetype)initWithController:(NSFetchedResultsController *)fetchedResultsController;
 
 @end
