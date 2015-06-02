@@ -75,7 +75,7 @@
 - (PMKPromise *)reloadWithModels:(NSArray *)models {
   __typeof(self) __weak weakSelf = self;
   return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    weakSelf.sections = models;
+    weakSelf.sections = @[ models ?: @[] ];
     fulfill(nil);
   }];
 }
