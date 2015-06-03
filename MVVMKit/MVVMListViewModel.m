@@ -13,6 +13,7 @@
 
 @interface MVVMListViewModel ()
 
+@property (nonatomic, assign) Class viewModelsClass;
 @property (nonatomic, strong) id <MVVMListViewModelDataSource> dataSource;
 
 @end

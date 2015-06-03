@@ -24,10 +24,11 @@ SPEC_BEGIN(MVVMListViewModelInMemorySpec)
       NSArray *models = @[ @1, @2, @3, @4 ];
 
       id <MVVMListViewModelDataSource> dataSource = [[MVVMDataSourceInMemory alloc] initWithModels:models];
-      MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc] initWithDataSource:dataSource];
+      MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc]
+        initWithDataSource:dataSource
+        viewModelsClass:[MVVMViewModelTest class]];
 
       it(@"Should create proper view model instances", ^{
-        listViewModel.viewModelsClass = [MVVMViewModelTest class];
         id viewModel = [listViewModel viewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [[viewModel should] beKindOfClass:[MVVMViewModelTest class]];
       });

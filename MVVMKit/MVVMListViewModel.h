@@ -52,7 +52,7 @@
   MVVMListViewModelMapping
   >
 
-@property (nonatomic, assign) Class viewModelsClass;
+@property (nonatomic, assign, readonly) Class viewModelsClass;
 @property (nonatomic, strong, readonly) id <MVVMListViewModelDataSource> dataSource;
 
 - (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource;
