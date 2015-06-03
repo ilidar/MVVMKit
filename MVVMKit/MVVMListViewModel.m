@@ -22,9 +22,21 @@
 #pragma mark - Init Methods
 
 - (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource {
-  self = [super init];
+  return [self initWithDataSource:dataSource viewModelsClass:nil];
+}
+
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource
+                   viewModelsClass:(Class)viewModelsClass {
+  return [self initWithDataSource:dataSource viewModelsClass:viewModelsClass model:nil];
+}
+
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource
+                   viewModelsClass:(Class)viewModelsClass
+                             model:(MVVMModel *)model {
+  self = [super initWithModel:model];
   if (!self) return nil;
   self.dataSource = dataSource;
+  self.viewModelsClass = viewModelsClass;
   return self;
 }
 

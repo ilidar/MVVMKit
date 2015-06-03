@@ -56,6 +56,11 @@
 @property (nonatomic, strong, readonly) id <MVVMListViewModelDataSource> dataSource;
 
 - (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource;
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource
+                   viewModelsClass:(Class)viewModelsClass;
+- (instancetype)initWithDataSource:(id <MVVMListViewModelDataSource>)dataSource
+                   viewModelsClass:(Class)viewModelsClass
+                             model:(MVVMModel *)model;
 
 - (PMKPromise *)fetch;
 
