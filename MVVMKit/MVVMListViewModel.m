@@ -61,9 +61,13 @@
   return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
     if ([remoteModels isKindOfClass:[NSArray class]]) {
       fulfill(remoteModels);
-    } else {
-      fulfill(localModels);
+      return;
     }
+    if ([localModels isKindOfClass:[NSArray class]]) {
+      fulfill(localModels);
+      return;
+    }
+    fulfill(nil);
   }];
 }
 
