@@ -88,7 +88,8 @@
 
 - (PMKPromise *)refresh {
   return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    fulfill([self.dataSource allModels]);
+    [self reloadWithModels:[self.dataSource allModels]];
+    fulfill(nil);
   }];
 }
 
