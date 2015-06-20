@@ -80,4 +80,8 @@
   }];
 }
 
+- (NSArray *)allModels {
+  return [self.sections flatten];
+}
+
 @end

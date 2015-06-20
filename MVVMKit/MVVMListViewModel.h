@@ -19,6 +19,7 @@
 - (NSArray *)indexPathsForModels:(NSArray *)models;
 - (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths;
+- (NSArray *)allModels;
 - (PMKPromise *)reloadWithModels:(NSArray *)models;
 
 @end
@@ -63,5 +64,6 @@
                              model:(MVVMModel *)model;
 
 - (PMKPromise *)fetch;
+- (PMKPromise *)refresh;
 
 @end

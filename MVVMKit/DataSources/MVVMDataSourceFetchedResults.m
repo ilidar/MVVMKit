@@ -74,4 +74,8 @@
   }];
 }
 
+- (NSArray *)allModels {
+  return self.fetchedResultsController.fetchedObjects;
+}
+
 @end

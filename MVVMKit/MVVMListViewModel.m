@@ -86,6 +86,12 @@
     });
 }
 
+- (PMKPromise *)refresh {
+  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+    fulfill([self.dataSource allModels]);
+  }];
+}
+
 #pragma mark - MVVMListViewModelDataSource Methods
 
 - (NSInteger)numberOfSections {
@@ -114,6 +120,10 @@
 
 - (PMKPromise *)reloadWithModels:(NSArray *)models {
   return [self.dataSource reloadWithModels:models];
+}
+
+- (NSArray *)allModels {
+  return [self.dataSource allModels];
 }
 
 #pragma mark - MVVMListViewModelMapping Methods
