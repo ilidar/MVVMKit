@@ -37,6 +37,7 @@
 		45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		45BE92601B1D9F570079A3B0 /* MVVMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; };
 		45BE92621B1DA27F0079A3B0 /* MVVMKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45E551A61B46D59500765339 /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445272D5C20D9DA0F727D /* MVVMListViewModelSpec.m */; };
 		72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */; };
 /* End PBXBuildFile section */
 
@@ -460,6 +461,7 @@
 				45452D451B1D6A0A00AEA113 /* MVVMFeed.m in Sources */,
 				45452D4F1B1D90D400AEA113 /* MVVMListViewModel.m in Sources */,
 				45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */,
+				45E551A61B46D59500765339 /* MVVMListViewModelSpec.m in Sources */,
 				45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */,
 				45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelInMemorySpec.m in Sources */,
 				4501B0691B46B04000299D73 /* MVVMTestViewModel.m in Sources */,

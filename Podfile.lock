@@ -1,14 +1,14 @@
 PODS:
-  - Functional (0.0.3)
+  - Functional (0.0.4)
   - Kiwi (2.3.1)
   - MagicalRecord (2.3.0)
-  - OMGHTTPURLRQ (2.1):
-    - OMGHTTPURLRQ/RQ (= 2.1)
-  - OMGHTTPURLRQ/FormURLEncode (2.1)
-  - OMGHTTPURLRQ/RQ (2.1):
+  - OMGHTTPURLRQ (2.1.3):
+    - OMGHTTPURLRQ/RQ (= 2.1.3)
+  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
+  - OMGHTTPURLRQ/RQ (2.1.3):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (2.1)
+  - OMGHTTPURLRQ/UserAgent (2.1.3)
   - PromiseKit (1.5.3):
     - PromiseKit/CALayer (= 1.5.3)
     - PromiseKit/NSNotificationCenter (= 1.5.3)
@@ -48,13 +48,14 @@ DEPENDENCIES:
   - Functional
   - Kiwi
   - MagicalRecord
+  - OMGHTTPURLRQ (= 2.1.3)
   - PromiseKit (= 1.5.3)
 
 SPEC CHECKSUMS:
-  Functional: 5a0542aae25a47ee00e1ff2be7e71bdcd9788e61
+  Functional: 712484ea05bb20910b7e31d44ede6f0dad4d9b4b
   Kiwi: f038a6c61f7a9e4d7766bff5717aa3b3fdb75f55
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
-  OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
+  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
   PromiseKit: 7ecae7c190ab92ae00aae6ba7f88942107532b8f
 
 COCOAPODS: 0.37.2
