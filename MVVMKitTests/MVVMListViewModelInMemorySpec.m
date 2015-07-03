@@ -14,7 +14,7 @@
 #import "MVVMTestViewModel.h"
 
 SPEC_BEGIN(MVVMListViewModelInMemorySpec)
-  describe(@"MVVMListViewModel", ^{
+  describe(@"MVVMListViewModelInMemory", ^{
     context(@"Validating", ^{
       NSArray *models = @[ @1, @2, @3, @4 ];
 
