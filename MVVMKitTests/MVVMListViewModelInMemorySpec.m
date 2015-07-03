@@ -11,12 +11,7 @@
 #import <Kiwi/Kiwi.h>
 
 #import "MVVMDataSourceInMemory.h"
-
-@interface MVVMViewModelTest : MVVMViewModel
-@end
-
-@implementation MVVMViewModelTest
-@end
+#import "MVVMTestViewModel.h"
 
 SPEC_BEGIN(MVVMListViewModelInMemorySpec)
   describe(@"MVVMListViewModel", ^{
@@ -26,11 +21,11 @@ SPEC_BEGIN(MVVMListViewModelInMemorySpec)
       id <MVVMListViewModelDataSource> dataSource = [[MVVMDataSourceInMemory alloc] initWithModels:models];
       MVVMListViewModel *listViewModel = [[MVVMListViewModel alloc]
         initWithDataSource:dataSource
-        viewModelsClass:[MVVMViewModelTest class]];
+        viewModelsClass:[MVVMTestViewModel class]];
 
       it(@"Should create proper view model instances", ^{
         id viewModel = [listViewModel viewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        [[viewModel should] beKindOfClass:[MVVMViewModelTest class]];
+        [[viewModel should] beKindOfClass:[MVVMTestViewModel class]];
       });
 
       it(@"Should return proper index paths", ^{
@@ -44,18 +39,6 @@ SPEC_BEGIN(MVVMListViewModelInMemorySpec)
         for (NSUInteger i = 0; i < indexPaths.count; ++i) {
           [[indexPaths[i] should] equal:[NSIndexPath indexPathForRow:i inSection:0]];
         }
-      });
-    });
-
-    context(@"Fetching", ^{
-      it(@"Should eventually exit fetching block", ^{
-        __block BOOL finished = NO;
-        MVVMListViewModel *viewModel = [[MVVMListViewModel alloc] init];
-        [viewModel fetch]
-          .finally(^{
-            finished = YES;
-          });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
       });
     });
   });

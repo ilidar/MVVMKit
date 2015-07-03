@@ -73,7 +73,15 @@
 
 #pragma mark - Public Methods
 
-- (PMKPromise *)fetch {
+- (PMKPromise *)fetchLocals {
+  __typeof(self) __weak weakSelf = self;
+  return [self fetchModelsLocally]
+    .then(^(NSArray *localModels) {
+      return [weakSelf reloadWithModels:localModels];
+    });
+}
+
+- (PMKPromise *)fetchRemotes {
   __typeof(self) __weak weakSelf = self;
   return [PMKPromise when:@[[self fetchModelsRemotely], [self fetchModelsLocally]]]
     .then(^(NSArray *results) {

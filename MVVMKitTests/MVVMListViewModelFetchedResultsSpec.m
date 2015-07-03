@@ -47,7 +47,7 @@ SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
 
       it(@"Should have valid number of models", ^{
         __block NSInteger fetchedNumberOfModels = 0;
-        [viewModel fetch]
+        [viewModel fetchLocals]
           .then(^{
             fetchedNumberOfModels = [viewModel numberOfRowsInSection:0];
           });

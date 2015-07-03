@@ -63,7 +63,8 @@
                    viewModelsClass:(Class)viewModelsClass
                              model:(MVVMModel *)model;
 
-- (PMKPromise *)fetch;
+- (PMKPromise *)fetchLocals;
+- (PMKPromise *)fetchRemotes;
 - (PMKPromise *)refresh;
 
 @end

@@ -48,7 +48,15 @@
     forCellReuseIdentifier:self.cellIdentifier];
 
   [self pvm_notifyFetchingStarted];
-  [self.viewModel fetch]
+  [self.viewModel fetchLocals]
+    .then(^{
+      [self reloadData];
+      [self pvm_notifyFetchingEnded];
+    })
+    .then(^{
+      [self pvm_notifyFetchingStarted];
+      return [self.viewModel fetchRemotes];
+    })
     .then(^{
       [self reloadData];
       [self pvm_notifyFetchingEnded];

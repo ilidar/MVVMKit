@@ -12,6 +12,9 @@
 		2E944C0E7233E721B78D1E76 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
 		2E944CECD9360C00926D8E01 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
 		2E944F77A6326EAA0E8B2B79 /* MVVMDataSourceInMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */; };
+		4501B0681B46AF3300299D73 /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445272D5C20D9DA0F727D /* MVVMListViewModelSpec.m */; };
+		4501B0691B46B04000299D73 /* MVVMTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9444537B681E00B95BEABD /* MVVMTestViewModel.m */; };
+		4501B06A1B46B04000299D73 /* MVVMTestListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E94468CAFF46DE4D7BAE6FC /* MVVMTestListViewModel.m */; };
 		452553271AF953CF006A0BEA /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
 		4525532B1AF962EA006A0BEA /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
 		45452D391B1D681F00AEA113 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45452D371B1D681F00AEA113 /* Model.xcdatamodeld */; };
@@ -65,15 +68,20 @@
 		0742C42304D1726F65088263 /* Pods-MVVMKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKitTests/Pods-MVVMKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2E9440794571FC8A66A16A06 /* MVVMListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListController.m; sourceTree = "<group>"; };
 		2E944258FEED406107C40EB9 /* MVVMListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMListController.h; sourceTree = "<group>"; };
+		2E94435ABE4E0164255DD1D2 /* MVVMTestListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTestListViewModel.h; sourceTree = "<group>"; };
+		2E9444537B681E00B95BEABD /* MVVMTestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTestViewModel.m; sourceTree = "<group>"; };
 		2E944460289775E7A2B25D6B /* MVVMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMCell.h; sourceTree = "<group>"; };
+		2E9445272D5C20D9DA0F727D /* MVVMListViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewModelSpec.m; sourceTree = "<group>"; };
 		2E9445394EC86AD58036AE71 /* MVVMListViewModelFetchedResultsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewModelFetchedResultsSpec.m; sourceTree = "<group>"; };
 		2E9445B0FEEF470DC92A891D /* MVVMDataSourceInMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMDataSourceInMemory.h; sourceTree = "<group>"; };
 		2E94463FB4F50149ACF19A93 /* MVVMDataSourceFetchedResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMDataSourceFetchedResults.h; sourceTree = "<group>"; };
+		2E94468CAFF46DE4D7BAE6FC /* MVVMTestListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTestListViewModel.m; sourceTree = "<group>"; };
 		2E944848E130A2C845FA550B /* MVVMLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMLogging.h; sourceTree = "<group>"; };
 		2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMDataSourceInMemory.m; sourceTree = "<group>"; };
 		2E9449BB6595631DDA589E68 /* MVVMListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMListViewModel.h; sourceTree = "<group>"; };
 		2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMDataSourceFetchedResults.m; sourceTree = "<group>"; };
 		2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewModel.m; sourceTree = "<group>"; };
+		2E944DB880332C8AF1FB8343 /* MVVMTestViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTestViewModel.h; sourceTree = "<group>"; };
 		452553041AF95298006A0BEA /* MVVMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MVVMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		452553081AF95298006A0BEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452553091AF95298006A0BEA /* MVVMKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMKit.h; sourceTree = "<group>"; };
@@ -122,6 +130,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9445F896993CF9CBF5F2D7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E9444537B681E00B95BEABD /* MVVMTestViewModel.m */,
+				2E944DB880332C8AF1FB8343 /* MVVMTestViewModel.h */,
+				2E94468CAFF46DE4D7BAE6FC /* MVVMTestListViewModel.m */,
+				2E94435ABE4E0164255DD1D2 /* MVVMTestListViewModel.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2E944810CABBCA4F984A1D01 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +218,8 @@
 				2E944BB628410648F4D9236D /* Model */,
 				45CACCB91B17C9F400E36FBA /* MVVMListViewModelInMemorySpec.m */,
 				2E9445394EC86AD58036AE71 /* MVVMListViewModelFetchedResultsSpec.m */,
+				2E9445272D5C20D9DA0F727D /* MVVMListViewModelSpec.m */,
+				2E9445F896993CF9CBF5F2D7 /* ViewModel */,
 			);
 			path = MVVMKitTests;
 			sourceTree = "<group>";
@@ -442,8 +463,11 @@
 				45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */,
 				45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */,
 				45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelInMemorySpec.m in Sources */,
+				4501B0691B46B04000299D73 /* MVVMTestViewModel.m in Sources */,
 				45452D4B1B1D90D400AEA113 /* MVVMDataSourceFetchedResults.m in Sources */,
 				45452D4D1B1D90D400AEA113 /* MVVMController.m in Sources */,
+				4501B0681B46AF3300299D73 /* MVVMListViewModelSpec.m in Sources */,
+				4501B06A1B46B04000299D73 /* MVVMTestListViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
