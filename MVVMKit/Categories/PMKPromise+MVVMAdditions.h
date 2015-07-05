@@ -6,7 +6,7 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import "Promise.h"
+#import <PromiseKit/Promise.h>
 
 @interface PMKPromise (MVVMAdditions)
 
