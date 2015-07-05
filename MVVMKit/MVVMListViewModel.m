@@ -11,6 +11,8 @@
 
 #import "MVVMListViewModel.h"
 
+#import "PMKPromise+MVVMAdditions.h"
+
 @interface MVVMListViewModel ()
 
 @property (nonatomic, assign) Class viewModelsClass;
@@ -84,9 +86,7 @@
 - (PMKPromise *)fetchRemotes {
   __typeof(self) __weak weakSelf = self;
   return [PMKPromise when:@[[self fetchModelsRemotely], [self fetchModelsLocally]]]
-    .then(^(NSArray *results) {
-      NSArray *remoteModels = results.count > 0 ? results[0] : nil;
-      NSArray *localModels = results.count > 1 ? results[1] : nil;
+    .then2(^(NSArray *remoteModels, NSArray *localModels) {
       return [weakSelf mergeRemoteModels:remoteModels withLocalModels:localModels];
     })
     .then(^(NSArray *mergedModels) {
