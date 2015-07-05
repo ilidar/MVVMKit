@@ -2,29 +2,50 @@
 
 import argparse
 import plistlib
-from subprocess import check_output
+import subprocess
+import fileinput
 
 
-def get_version_next(version):
+PODSPEC_PATH = "MVVMKit.podspec"
+PLIST_PATH = "MVVMKit/Info.plist"
+
+
+def increment_version(version):
     components = str(version).split('.')
     init, last = components[:-1], components[-1:]
     init.append(str(int(last[0]) + 1))
     return ".".join(init)
 
 
+def get_version():
+    global PLIST_PATH
+    plist = plistlib.readPlist(PLIST_PATH)
+    return plist["CFBundleVersion"]
+
+
+def set_podspec_version(new_version):
+    global PODSPEC_PATH
+    old_version = get_version()
+    for line in fileinput.input(PODSPEC_PATH, inplace=True):
+        print line.replace(old_version, new_version),
+
+
+def set_plist_version(version):
+    subprocess.check_output(["agvtool", "new-version", "-all", version])
+
+
 def set_version(version):
-    return check_output(
-        ["/usr/bin/agvtool new-version -all %s" % version],
-        shell=True)
+    old_version = get_version()
+    set_podspec_version(version)
+    set_plist_version(version)
+    print "Updated version from [%s] to [%s]." \
+        % (old_version, version)
 
 
 def set_version_automatically():
-    plist = plistlib.readPlist("MVVMKit/Info.plist")
-    current_version = plist["CFBundleVersion"]
-    next_version = get_version_next(current_version)
+    current_version = get_version()
+    next_version = increment_version(current_version)
     set_version(next_version)
-    print "Updated version from [%s] to [%s]." \
-        % (current_version, next_version)
 
 
 def main():
