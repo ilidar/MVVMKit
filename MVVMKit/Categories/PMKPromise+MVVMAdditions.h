@@ -11,5 +11,7 @@
 @interface PMKPromise (MVVMAdditions)
 
 - (PMKPromise *(^)(id))then2;
+- (PMKPromise *(^)(id))then3;
+- (PMKPromise *(^)(id))then4;
 
 @end
