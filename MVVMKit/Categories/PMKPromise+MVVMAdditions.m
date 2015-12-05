@@ -8,37 +8,37 @@
 
 #import "PMKPromise+MVVMAdditions.h"
 
-@implementation PMKPromise (MVVMAdditions)
+@implementation AnyPromise (MVVMAdditions)
 
-- (PMKPromise *(^)(id))then2 {
+- (AnyPromise *(^)(id))then2 {
   return ^(id block) {
     return self.thenOn(dispatch_get_main_queue(), ^(NSArray *results) {
       id x = results.count > 0 ? results[0] : nil;
       id y = results.count > 1 ? results[1] : nil;
-      return ((PMKPromise *(^)(id, id)) block )(x, y);
+      return ((AnyPromise *(^)(id, id)) block )(x, y);
     });
   };
 }
 
-- (PMKPromise *(^)(id))then3 {
+- (AnyPromise *(^)(id))then3 {
   return ^(id block) {
     return self.thenOn(dispatch_get_main_queue(), ^(NSArray *results) {
       id x = results.count > 0 ? results[0] : nil;
       id y = results.count > 1 ? results[1] : nil;
       id z = results.count > 2 ? results[2] : nil;
-      return ((PMKPromise *(^)(id, id, id)) block )(x, y, z);
+      return ((AnyPromise *(^)(id, id, id)) block )(x, y, z);
     });
   };
 }
 
-- (PMKPromise *(^)(id))then4 {
+- (AnyPromise *(^)(id))then4 {
   return ^(id block) {
     return self.thenOn(dispatch_get_main_queue(), ^(NSArray *results) {
       id x = results.count > 0 ? results[0] : nil;
       id y = results.count > 1 ? results[1] : nil;
       id z = results.count > 2 ? results[2] : nil;
       id k = results.count > 3 ? results[3] : nil;
-      return ((PMKPromise *(^)(id, id, id, id)) block )(x, y, z, k);
+      return ((AnyPromise *(^)(id, id, id, id)) block )(x, y, z, k);
     });
   };
 }

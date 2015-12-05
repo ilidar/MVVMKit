@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		081CEDB9B2DE5B8DC0591921 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 980FCD7DF794728159475283 /* libPods.a */; };
 		2E944281ABF8F1D4473AFD91 /* PMKPromise+MVVMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944DDAF9C40021EC3ECA9D /* PMKPromise+MVVMAdditions.h */; };
 		2E944600DC0E4C05A3142F23 /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
 		2E944C0E7233E721B78D1E76 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
@@ -40,7 +39,8 @@
 		45BE92601B1D9F570079A3B0 /* MVVMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; };
 		45BE92621B1DA27F0079A3B0 /* MVVMKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45E551A61B46D59500765339 /* MVVMListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445272D5C20D9DA0F727D /* MVVMListViewModelSpec.m */; };
-		72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */; };
+		618E699E1CD4D38B74A54F81 /* Pods_MVVMKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628AA614D73D61195D150D60 /* Pods_MVVMKitTests.framework */; };
+		C38FD00E6CC1BD009E41B701 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A302E016C90800FBEB3DF9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,10 +103,10 @@
 		45CACCAC1B17C56F00E36FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CACCB51B17C8E100E36FBA /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/../build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		45CACCB91B17C9F400E36FBA /* MVVMListViewModelInMemorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewModelInMemorySpec.m; sourceTree = "<group>"; };
-		6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		628AA614D73D61195D150D60 /* Pods_MVVMKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A302E016C90800FBEB3DF9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91DD4C3D6F7A9290CF92F512 /* Pods-MVVMKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKitTests/Pods-MVVMKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		970664E0881A2A04603A0A28 /* libPods-MVVMKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		980FCD7DF794728159475283 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A206107CFED0906F9755186C /* Pods-MVVMKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKit/Pods-MVVMKit.debug.xcconfig"; sourceTree = "<group>"; };
 		AA538BEC3376092DFB874D30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C99A21B0CE7777AC2112BAA0 /* Pods-MVVMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMKit/Pods-MVVMKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				081CEDB9B2DE5B8DC0591921 /* libPods.a in Frameworks */,
+				C38FD00E6CC1BD009E41B701 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BE92601B1D9F570079A3B0 /* MVVMKit.framework in Frameworks */,
-				72192F84AEB2D48FA48E5FA7 /* libPods-MVVMKitTests.a in Frameworks */,
+				618E699E1CD4D38B74A54F81 /* Pods_MVVMKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +253,8 @@
 				45452D5A1B1D931700AEA113 /* Foundation.framework */,
 				45CACCB51B17C8E100E36FBA /* libPods.a */,
 				970664E0881A2A04603A0A28 /* libPods-MVVMKit.a */,
-				980FCD7DF794728159475283 /* libPods.a */,
-				6E43CFAB4AD9CC9DFD0B2942 /* libPods-MVVMKitTests.a */,
+				82A302E016C90800FBEB3DF9 /* Pods.framework */,
+				628AA614D73D61195D150D60 /* Pods_MVVMKitTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -535,6 +535,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -553,6 +554,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -583,6 +585,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.1.4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -594,6 +597,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -615,7 +619,6 @@
 				INFOPLIST_FILE = MVVMKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -634,7 +637,6 @@
 				INFOPLIST_FILE = MVVMKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -645,12 +647,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0742C42304D1726F65088263 /* Pods-MVVMKitTests.debug.xcconfig */;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -661,12 +663,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91DD4C3D6F7A9290CF92F512 /* Pods-MVVMKitTests.release.xcconfig */;
 			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";

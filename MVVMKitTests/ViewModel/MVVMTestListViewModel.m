@@ -10,6 +10,8 @@
 
 #import "MVVMTestListViewModel.h"
 
+static NSString *const sMVVMTestListViewModelErrorDomain = @"MVVMTestListViewModelErrorDomain";
+
 static inline void sDispatch(void(^block)()) {
   dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) ( 0.2f * NSEC_PER_SEC )), dispatch_get_main_queue(), block);
 }
@@ -18,28 +20,28 @@ static inline void sDispatch(void(^block)()) {
 
 #pragma mark - Overridden Methods
 
-- (PMKPromise *)fetchModelsLocally {
+- (AnyPromise *)fetchModelsLocally {
   __typeof(self) __weak weakSelf = self;
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
     if ([weakSelf isFailableLocally]) {
-      reject(nil);
+      resolve([NSError errorWithDomain:sMVVMTestListViewModelErrorDomain code:0 userInfo:nil]);
       return;
     }
     sDispatch(^{
-      fulfill(@[ @6, @5, @4, @3, @2, @1 ]);
+      resolve(@[ @6, @5, @4, @3, @2, @1 ]);
     });
   }];
 }
 
-- (PMKPromise *)fetchModelsRemotely {
+- (AnyPromise *)fetchModelsRemotely {
   __typeof(self) __weak weakSelf = self;
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
     if ([weakSelf isFailableRemotely]) {
-      reject(nil);
+      resolve([NSError errorWithDomain:sMVVMTestListViewModelErrorDomain code:0 userInfo:nil]);
       return;
     }
     sDispatch(^{
-      fulfill(@[ @2, @3, @4, @5 ]);
+      resolve(@[ @2, @3, @4, @5 ]);
     });
   }];
 }

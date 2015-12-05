@@ -1,10 +1,11 @@
 source 'https://github.com/ilidar/Cocoapods-Private.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.3'
+platform :ios, '9.1'
 
-pod 'PromiseKit', '1.5.3'
-pod 'OMGHTTPURLRQ', '2.1.3'
+use_frameworks!
+
+pod 'PromiseKit', '~> 3.0'
 pod 'Functional'
 
 target :MVVMKitTests, :exclusive => true do

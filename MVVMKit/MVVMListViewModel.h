@@ -8,7 +8,7 @@
 
 #import "MVVMViewModel.h"
 
-@class PMKPromise;
+@class AnyPromise;
 @class MVVMListViewModel;
 
 @protocol MVVMListViewModelDataSource <NSObject>
@@ -20,20 +20,20 @@
 - (MVVMModel *)modelAtIndexPath:(NSIndexPath *)indexPath;
 - (NSArray *)modelsAtIndexPaths:(NSArray *)indexPaths;
 - (NSArray *)allModels;
-- (PMKPromise *)reloadWithModels:(NSArray *)models;
+- (AnyPromise *)reloadWithModels:(NSArray *)models;
 
 @end
 
 @protocol MVVMListViewModelFetching <NSObject>
 
-- (PMKPromise *)fetchModelsRemotely;
-- (PMKPromise *)fetchModelsLocally;
+- (AnyPromise *)fetchModelsRemotely;
+- (AnyPromise *)fetchModelsLocally;
 
 @end
 
 @protocol MVVMListViewModelMerging <NSObject>
 
-- (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels;
+- (AnyPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels;
 
 @end
 
@@ -63,8 +63,8 @@
                    viewModelsClass:(Class)viewModelsClass
                              model:(MVVMModel *)model;
 
-- (PMKPromise *)fetchLocals;
-- (PMKPromise *)fetchRemotes;
-- (PMKPromise *)refresh;
+- (AnyPromise *)fetchLocals;
+- (AnyPromise *)fetchRemotes;
+- (AnyPromise *)refresh;
 
 @end

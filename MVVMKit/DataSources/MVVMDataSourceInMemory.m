@@ -7,7 +7,7 @@
 //
 
 #import <Functional/Functional.h>
-#import <PromiseKit/Promise.h>
+#import <PromiseKit/PromiseKit.h>
 
 #import "MVVMDataSourceInMemory.h"
 
@@ -72,11 +72,11 @@
   }];
 }
 
-- (PMKPromise *)reloadWithModels:(NSArray *)models {
+- (AnyPromise *)reloadWithModels:(NSArray *)models {
   __typeof(self) __weak weakSelf = self;
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    weakSelf.sections = @[ models ?: @[] ];
-    fulfill(nil);
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
+    weakSelf.sections = @[ models ?: @[ ]];
+    resolve(nil);
   }];
 }
 
