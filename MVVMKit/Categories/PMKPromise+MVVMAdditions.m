@@ -6,6 +6,8 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "PMKPromise+MVVMAdditions.h"
 
 @implementation AnyPromise (MVVMAdditions)

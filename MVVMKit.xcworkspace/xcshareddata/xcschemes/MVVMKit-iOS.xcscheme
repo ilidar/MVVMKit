@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45CACCA81B17C56F00E36FBA"
-               BuildableName = "MVVMKitTests.xctest"
-               BlueprintName = "MVVMKitTests"
+               BlueprintIdentifier = "452553031AF95298006A0BEA"
+               BuildableName = "MVVMKit-iOS.framework"
+               BlueprintName = "MVVMKit-iOS"
                ReferencedContainer = "container:MVVMKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,12 +33,21 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45CACCA81B17C56F00E36FBA"
-               BuildableName = "MVVMKitTests.xctest"
-               BlueprintName = "MVVMKitTests"
+               BuildableName = "MVVMKit-iOSTests.xctest"
+               BlueprintName = "MVVMKit-iOSTests"
                ReferencedContainer = "container:MVVMKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "452553031AF95298006A0BEA"
+            BuildableName = "MVVMKit-iOS.framework"
+            BlueprintName = "MVVMKit-iOS"
+            ReferencedContainer = "container:MVVMKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -55,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45CACCA81B17C56F00E36FBA"
-            BuildableName = "MVVMKitTests.xctest"
-            BlueprintName = "MVVMKitTests"
+            BlueprintIdentifier = "452553031AF95298006A0BEA"
+            BuildableName = "MVVMKit-iOS.framework"
+            BlueprintName = "MVVMKit-iOS"
             ReferencedContainer = "container:MVVMKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "452553031AF95298006A0BEA"
+            BuildableName = "MVVMKit-iOS.framework"
+            BlueprintName = "MVVMKit-iOS"
+            ReferencedContainer = "container:MVVMKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
