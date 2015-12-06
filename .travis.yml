@@ -1,6 +1,6 @@
 language: objective-c
 xcode_workspace: MVVMKit.xcworkspace
-xcode_scheme: MVVMKitTests
+xcode_scheme: MVVMKit-iOSTests
 xcode_sdk: iphonesimulator9.1
 osx_image: xcode7.1
 before_install:
