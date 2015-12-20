@@ -19,12 +19,6 @@
 		4525532B1AF962EA006A0BEA /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
 		45452D391B1D681F00AEA113 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45452D371B1D681F00AEA113 /* Model.xcdatamodeld */; };
 		45452D451B1D6A0A00AEA113 /* MVVMFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 45452D441B1D6A0A00AEA113 /* MVVMFeed.m */; };
-		45452D4B1B1D90D400AEA113 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
-		45452D4C1B1D90D400AEA113 /* MVVMDataSourceInMemory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9448A68A5B6F8811EFABE5 /* MVVMDataSourceInMemory.m */; };
-		45452D4D1B1D90D400AEA113 /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553291AF962EA006A0BEA /* MVVMController.m */; };
-		45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
-		45452D4F1B1D90D400AEA113 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
-		45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 452553251AF953CF006A0BEA /* MVVMViewModel.m */; };
 		45452D511B1D918100AEA113 /* MVVMDataSourceFetchedResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E94463FB4F50149ACF19A93 /* MVVMDataSourceFetchedResults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45452D521B1D918100AEA113 /* MVVMDataSourceInMemory.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E9445B0FEEF470DC92A891D /* MVVMDataSourceInMemory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45452D531B1D918100AEA113 /* MVVMCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944460289775E7A2B25D6B /* MVVMCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -424,16 +418,10 @@
 			files = (
 				45452D391B1D681F00AEA113 /* Model.xcdatamodeld in Sources */,
 				45452D5F1B1D9ABD00AEA113 /* MVVMListViewModelFetchedResultsSpec.m in Sources */,
-				45452D4C1B1D90D400AEA113 /* MVVMDataSourceInMemory.m in Sources */,
 				45452D451B1D6A0A00AEA113 /* MVVMFeed.m in Sources */,
-				45452D4F1B1D90D400AEA113 /* MVVMListViewModel.m in Sources */,
-				45452D501B1D90D400AEA113 /* MVVMViewModel.m in Sources */,
 				45E551A61B46D59500765339 /* MVVMListViewModelSpec.m in Sources */,
-				45452D4E1B1D90D400AEA113 /* MVVMListController.m in Sources */,
 				45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelInMemorySpec.m in Sources */,
 				4501B0691B46B04000299D73 /* MVVMTestViewModel.m in Sources */,
-				45452D4B1B1D90D400AEA113 /* MVVMDataSourceFetchedResults.m in Sources */,
-				45452D4D1B1D90D400AEA113 /* MVVMController.m in Sources */,
 				4501B06A1B46B04000299D73 /* MVVMTestListViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
