@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Kiwi/Kiwi.h>
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 #import <PromiseKit/PromiseKit.h>
 
 #import "MVVMListViewModel.h"
@@ -15,7 +16,7 @@
 #import "MVVMTestViewModel.h"
 #import "MVVMTestListViewModel.h"
 
-SPEC_BEGIN(MVVMListViewModelSpec)
+SpecBegin(MVVMListViewModelSpec)
   describe(@"MVVMListViewModel", ^{
     context(@"Fetching", ^{
       __block MVVMTestListViewModel *viewModel = nil;
@@ -36,7 +37,7 @@ SPEC_BEGIN(MVVMListViewModelSpec)
           .finally(^{
             finished = YES;
           });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
+        expect(finished).will.beTruthy();
       });
 
       it(@"should eventually exit remote fetching block", ^{
@@ -45,7 +46,7 @@ SPEC_BEGIN(MVVMListViewModelSpec)
           .finally(^{
             finished = YES;
           });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
+          expect(finished).will.beTruthy();
       });
 
       it(@"should eventually exit local/remote fetching block", ^{
@@ -57,7 +58,7 @@ SPEC_BEGIN(MVVMListViewModelSpec)
           .finally(^{
             finished = YES;
           });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
+        expect(finished).will.beTruthy();
       });
 
       it(@"should eventually fail local fetching block", ^{
@@ -70,7 +71,7 @@ SPEC_BEGIN(MVVMListViewModelSpec)
           .catch(^(NSError *error) {
             finished = YES;
           });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
+        expect(finished).will.beTruthy();
       });
 
       it(@"should eventually fail remote fetching block", ^{
@@ -83,8 +84,8 @@ SPEC_BEGIN(MVVMListViewModelSpec)
           .catch(^(NSError *error) {
             finished = YES;
           });
-        [[expectFutureValue(theValue(finished)) shouldEventually] beYes];
+        expect(finished).will.beTruthy();
       });
     });
   });
-SPEC_END
+SpecEnd

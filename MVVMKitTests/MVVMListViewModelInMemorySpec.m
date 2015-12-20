@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <PromiseKit/PromiseKit.h>
-#import <Kiwi/Kiwi.h>
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 
 #import "MVVMDataSourceInMemory.h"
 #import "MVVMTestViewModel.h"
 
-SPEC_BEGIN(MVVMListViewModelInMemorySpec)
+SpecBegin(MVVMListViewModelInMemorySpec)
   describe(@"MVVMListViewModelInMemory", ^{
     context(@"Validating", ^{
       NSArray *models = @[ @1, @2, @3, @4 ];
@@ -25,21 +26,21 @@ SPEC_BEGIN(MVVMListViewModelInMemorySpec)
 
       it(@"Should create proper view model instances", ^{
         id viewModel = [listViewModel viewModelAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        [[viewModel should] beKindOfClass:[MVVMTestViewModel class]];
+        expect(viewModel).to.beAKindOf([MVVMTestViewModel class]);
       });
 
       it(@"Should return proper index paths", ^{
         for (NSUInteger i = 0; i < models.count; ++i) {
           id model = models[i];
           NSIndexPath *indexPath = [listViewModel indexPathForModel:model];
-          [[indexPath should] equal:[NSIndexPath indexPathForRow:i inSection:0]];
+          expect(indexPath).to.equal([NSIndexPath indexPathForRow:i inSection:0]);
         }
         NSArray *indexPaths = [listViewModel indexPathsForModels:models];
-        [[theValue(indexPaths.count) should] equal:theValue(models.count)];
+        expect(indexPaths.count).to.equal(models.count);
         for (NSUInteger i = 0; i < indexPaths.count; ++i) {
-          [[indexPaths[i] should] equal:[NSIndexPath indexPathForRow:i inSection:0]];
+          expect(indexPaths[i]).to.equal([NSIndexPath indexPathForRow:i inSection:0]);
         }
       });
     });
   });
-SPEC_END
+SpecEnd

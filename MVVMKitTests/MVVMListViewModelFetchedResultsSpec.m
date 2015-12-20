@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Kiwi/Kiwi.h>
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import <PromiseKit/PromiseKit.h>
 
 #import "MVVMFeed.h"
 #import "MVVMDataSourceFetchedResults.h"
 
-SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
+SpecBegin(MVVMListViewModelFetchedResultsSpec)
   describe(@"MVVMFetchedListViewModel", ^{
     context(@"Fetching", ^{
       __block NSInteger numberOfModels;
@@ -42,7 +43,7 @@ SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
       });
 
       it(@"Should have initialized", ^{
-        [[theValue([MVVMFeed MR_countOfEntities]) should] equal:@(numberOfModels)];
+        expect([MVVMFeed MR_countOfEntities]).to.equal(numberOfModels);
       });
 
       it(@"Should have valid number of models", ^{
@@ -51,7 +52,7 @@ SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
           .then(^{
             fetchedNumberOfModels = [viewModel numberOfRowsInSection:0];
           });
-        [[expectFutureValue(theValue(fetchedNumberOfModels)) shouldEventually] equal:theValue(numberOfModels)];
+        expect(fetchedNumberOfModels).will.equal(numberOfModels);
       });
 
       afterAll(^{
@@ -60,4 +61,4 @@ SPEC_BEGIN(MVVMListViewModelFetchedResultsSpec)
       });
     });
   });
-SPEC_END
+SpecEnd

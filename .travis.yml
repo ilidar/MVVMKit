@@ -4,10 +4,9 @@ before_install:
   - brew update
   - brew install carthage
 install:
-  - carthage bootstrap --verbose
+  - carthage bootstrap --platform iOS --verbose
 script: 
   - xctool test -workspace MVVMKit.xcworkspace -scheme MVVMKit-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 branches:
   only:
     - master
-    - develop

@@ -1,2 +1,3 @@
-github "kiwi-bdd/Kiwi"
+github "specta/specta"
+github "specta/expecta"
 github "magicalpanda/MagicalRecord"

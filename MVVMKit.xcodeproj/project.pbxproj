@@ -36,14 +36,15 @@
 		45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelInMemorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelInMemorySpec.m */; };
 		45452D5F1B1D9ABD00AEA113 /* MVVMListViewModelFetchedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445394EC86AD58036AE71 /* MVVMListViewModelFetchedResultsSpec.m */; };
 		45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; };
+		4564E0A41C2732D200F8241F /* Expecta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4564E0A21C2732D200F8241F /* Expecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4564E0A51C2732D200F8241F /* Specta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4564E0A31C2732D200F8241F /* Specta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4564E0A61C27330B00F8241F /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564E0A21C2732D200F8241F /* Expecta.framework */; };
+		4564E0A71C27330B00F8241F /* Specta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564E0A31C2732D200F8241F /* Specta.framework */; };
 		45BADE6C1C14EBF400902AFB /* Functional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BADE6B1C14EBF400902AFB /* Functional.framework */; };
 		45BADE6F1C14EE3C00902AFB /* Functional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BADE6B1C14EBF400902AFB /* Functional.framework */; };
 		45BADE711C14EE3C00902AFB /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E1B1F81C148BD70038F6AD /* OMGHTTPURLRQ.framework */; };
 		45BADE721C14EE3C00902AFB /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E1B1F91C148BD70038F6AD /* PromiseKit.framework */; };
 		45BADE741C14F60600902AFB /* MagicalRecord.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BADE731C14F60600902AFB /* MagicalRecord.framework */; };
-		45BADE801C14F6A000902AFB /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45BADE7F1C14F6A000902AFB /* Kiwi.framework */; };
-		45BADE821C14F6CD00902AFB /* MVVMKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 452553041AF95298006A0BEA /* MVVMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		45BADE831C14F6CD00902AFB /* Kiwi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45BADE7F1C14F6A000902AFB /* Kiwi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45BADE841C14F6CD00902AFB /* MagicalRecord.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45BADE731C14F60600902AFB /* MagicalRecord.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45BADE851C14F6CD00902AFB /* Functional.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45BADE6B1C14EBF400902AFB /* Functional.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45BADE861C14F6CD00902AFB /* OMGHTTPURLRQ.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45E1B1F81C148BD70038F6AD /* OMGHTTPURLRQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,8 +81,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				45BADE821C14F6CD00902AFB /* MVVMKit.framework in CopyFiles */,
-				45BADE831C14F6CD00902AFB /* Kiwi.framework in CopyFiles */,
+				4564E0A41C2732D200F8241F /* Expecta.framework in CopyFiles */,
+				4564E0A51C2732D200F8241F /* Specta.framework in CopyFiles */,
 				45BADE841C14F6CD00902AFB /* MagicalRecord.framework in CopyFiles */,
 				45BADE851C14F6CD00902AFB /* Functional.framework in CopyFiles */,
 				45BADE861C14F6CD00902AFB /* OMGHTTPURLRQ.framework in CopyFiles */,
@@ -123,9 +124,10 @@
 		45452D441B1D6A0A00AEA113 /* MVVMFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMFeed.m; sourceTree = "<group>"; };
 		45452D5A1B1D931700AEA113 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45452D5C1B1D931D00AEA113 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4564E0A21C2732D200F8241F /* Expecta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Expecta.framework; path = Carthage/Build/iOS/Expecta.framework; sourceTree = "<group>"; };
+		4564E0A31C2732D200F8241F /* Specta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Specta.framework; path = Carthage/Build/iOS/Specta.framework; sourceTree = "<group>"; };
 		45BADE6B1C14EBF400902AFB /* Functional.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Functional.framework; path = Carthage/Build/iOS/Functional.framework; sourceTree = "<group>"; };
 		45BADE731C14F60600902AFB /* MagicalRecord.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MagicalRecord.framework; path = Carthage/Build/iOS/MagicalRecord.framework; sourceTree = "<group>"; };
-		45BADE7F1C14F6A000902AFB /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/iOS/Kiwi.framework; sourceTree = "<group>"; };
 		45CACCA91B17C56F00E36FBA /* MVVMKit-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVMKit-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CACCAC1B17C56F00E36FBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45CACCB91B17C9F400E36FBA /* MVVMListViewModelInMemorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMListViewModelInMemorySpec.m; sourceTree = "<group>"; };
@@ -148,7 +150,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45BADE801C14F6A000902AFB /* Kiwi.framework in Frameworks */,
+				4564E0A61C27330B00F8241F /* Expecta.framework in Frameworks */,
+				4564E0A71C27330B00F8241F /* Specta.framework in Frameworks */,
 				45BADE741C14F60600902AFB /* MagicalRecord.framework in Frameworks */,
 				45BADE6F1C14EE3C00902AFB /* Functional.framework in Frameworks */,
 				45BADE711C14EE3C00902AFB /* OMGHTTPURLRQ.framework in Frameworks */,
@@ -274,7 +277,8 @@
 		B0001F6BE40D3F159801EB41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45BADE7F1C14F6A000902AFB /* Kiwi.framework */,
+				4564E0A21C2732D200F8241F /* Expecta.framework */,
+				4564E0A31C2732D200F8241F /* Specta.framework */,
 				45BADE731C14F60600902AFB /* MagicalRecord.framework */,
 				45BADE6B1C14EBF400902AFB /* Functional.framework */,
 				45E1B1F81C148BD70038F6AD /* OMGHTTPURLRQ.framework */,
@@ -465,9 +469,9 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.1.4;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -514,9 +518,9 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 0.1.4;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -552,8 +556,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
-					"-framework",
-					XCTest,
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
@@ -577,8 +580,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
-					"-framework",
-					XCTest,
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
@@ -595,6 +597,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -609,6 +615,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = MVVMKitTests/Info.plist;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mvvmkit.id.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
