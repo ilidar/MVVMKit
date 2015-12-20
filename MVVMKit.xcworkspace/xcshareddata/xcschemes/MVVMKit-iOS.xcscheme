@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "452553031AF95298006A0BEA"
-               BuildableName = "MVVMKit-iOS.framework"
+               BuildableName = "MVVMKit.framework"
                BlueprintName = "MVVMKit-iOS"
                ReferencedContainer = "container:MVVMKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452553031AF95298006A0BEA"
-            BuildableName = "MVVMKit-iOS.framework"
+            BuildableName = "MVVMKit.framework"
             BlueprintName = "MVVMKit-iOS"
             ReferencedContainer = "container:MVVMKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452553031AF95298006A0BEA"
-            BuildableName = "MVVMKit-iOS.framework"
+            BuildableName = "MVVMKit.framework"
             BlueprintName = "MVVMKit-iOS"
             ReferencedContainer = "container:MVVMKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "452553031AF95298006A0BEA"
-            BuildableName = "MVVMKit-iOS.framework"
+            BuildableName = "MVVMKit.framework"
             BlueprintName = "MVVMKit-iOS"
             ReferencedContainer = "container:MVVMKit.xcodeproj">
          </BuildableReference>
