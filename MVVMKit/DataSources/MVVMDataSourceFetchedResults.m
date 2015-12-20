@@ -7,7 +7,7 @@
 //
 
 #import <Functional/Functional.h>
-#import <PromiseKit/Promise.h>
+#import <PromiseKit/PromiseKit.h>
 
 #import "MVVMDataSourceFetchedResults.h"
 
@@ -62,14 +62,14 @@
   }];
 }
 
-- (PMKPromise *)reloadWithModels:(NSArray *)models {
+- (AnyPromise *)reloadWithModels:(NSArray *)models {
   __typeof(self) __weak weakSelf = self;
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
     NSError *error = nil;
     if ([weakSelf.fetchedResultsController performFetch:&error]) {
-      fulfill(nil);
+      resolve(nil);
     } else {
-      reject(error);
+      resolve(error);
     }
   }];
 }

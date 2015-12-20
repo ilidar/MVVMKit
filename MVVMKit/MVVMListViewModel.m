@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <PromiseKit/Promise+When.h>
+#import <PromiseKit/PromiseKit.h>
 
 #import "MVVMListViewModel.h"
-
 #import "PMKPromise+MVVMAdditions.h"
 
 @interface MVVMListViewModel ()
@@ -45,37 +44,37 @@
 
 #pragma mark - MVVMListViewModelFetching Methods
 
-- (PMKPromise *)fetchModelsRemotely {
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    fulfill(nil);
+- (AnyPromise *)fetchModelsRemotely {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
+    resolve(nil);
   }];
 }
 
-- (PMKPromise *)fetchModelsLocally {
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
-    fulfill(nil);
+- (AnyPromise *)fetchModelsLocally {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
+    resolve(nil);
   }];
 }
 
 #pragma mark - MVVMListViewModelMerging Methods
 
-- (PMKPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels {
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+- (AnyPromise *)mergeRemoteModels:(NSArray *)remoteModels withLocalModels:(NSArray *)localModels {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
     if ([remoteModels isKindOfClass:[NSArray class]]) {
-      fulfill(remoteModels);
+      resolve(remoteModels);
       return;
     }
     if ([localModels isKindOfClass:[NSArray class]]) {
-      fulfill(localModels);
+      resolve(localModels);
       return;
     }
-    fulfill(nil);
+    resolve(nil);
   }];
 }
 
 #pragma mark - Public Methods
 
-- (PMKPromise *)fetchLocals {
+- (AnyPromise *)fetchLocals {
   __typeof(self) __weak weakSelf = self;
   return [self fetchModelsLocally]
     .then(^(NSArray *localModels) {
@@ -83,9 +82,9 @@
     });
 }
 
-- (PMKPromise *)fetchRemotes {
+- (AnyPromise *)fetchRemotes {
   __typeof(self) __weak weakSelf = self;
-  return [PMKPromise when:@[[self fetchModelsRemotely], [self fetchModelsLocally]]]
+  return PMKWhen(@[[self fetchModelsRemotely], [self fetchModelsLocally]])
     .then2(^(NSArray *remoteModels, NSArray *localModels) {
       return [weakSelf mergeRemoteModels:remoteModels withLocalModels:localModels];
     })
@@ -94,10 +93,10 @@
     });
 }
 
-- (PMKPromise *)refresh {
-  return [PMKPromise new:^(PMKFulfiller fulfill, PMKRejecter reject) {
+- (AnyPromise *)refresh {
+  return [AnyPromise promiseWithResolverBlock:^(PMKResolver resolve) {
     [self reloadWithModels:[self.dataSource allModels]];
-    fulfill(nil);
+    resolve(nil);
   }];
 }
 
@@ -127,7 +126,7 @@
   return [self.dataSource modelsAtIndexPaths:indexPaths];
 }
 
-- (PMKPromise *)reloadWithModels:(NSArray *)models {
+- (AnyPromise *)reloadWithModels:(NSArray *)models {
   return [self.dataSource reloadWithModels:models];
 }
 

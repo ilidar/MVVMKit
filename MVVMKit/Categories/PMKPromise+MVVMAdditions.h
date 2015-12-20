@@ -6,12 +6,12 @@
 // Copyright (c) 2015 D. K. All rights reserved.
 //
 
-#import <PromiseKit/Promise.h>
+#import <PromiseKit/PromiseKit.h>
 
-@interface PMKPromise (MVVMAdditions)
+@interface AnyPromise (MVVMAdditions)
 
-- (PMKPromise *(^)(id))then2;
-- (PMKPromise *(^)(id))then3;
-- (PMKPromise *(^)(id))then4;
+- (AnyPromise *(^)(id))then2;
+- (AnyPromise *(^)(id))then3;
+- (AnyPromise *(^)(id))then4;
 
 @end
