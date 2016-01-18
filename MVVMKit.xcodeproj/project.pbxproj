@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E944281ABF8F1D4473AFD91 /* PMKPromise+MVVMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944DDAF9C40021EC3ECA9D /* PMKPromise+MVVMAdditions.h */; };
+		2E944281ABF8F1D4473AFD91 /* PMKPromise+MVVMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E944DDAF9C40021EC3ECA9D /* PMKPromise+MVVMAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E944600DC0E4C05A3142F23 /* MVVMListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9440794571FC8A66A16A06 /* MVVMListController.m */; };
 		2E944C0E7233E721B78D1E76 /* MVVMDataSourceFetchedResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449CECE65A872F9D8230F /* MVVMDataSourceFetchedResults.m */; };
 		2E944CECD9360C00926D8E01 /* MVVMListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9449FF6302170C6B124E60 /* MVVMListViewModel.m */; };
@@ -29,7 +29,7 @@
 		45452D591B1D918100AEA113 /* MVVMViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553241AF953CF006A0BEA /* MVVMViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45452D5E1B1D9ABD00AEA113 /* MVVMListViewModelInMemorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CACCB91B17C9F400E36FBA /* MVVMListViewModelInMemorySpec.m */; };
 		45452D5F1B1D9ABD00AEA113 /* MVVMListViewModelFetchedResultsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9445394EC86AD58036AE71 /* MVVMListViewModelFetchedResultsSpec.m */; };
-		45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; };
+		45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 452553091AF95298006A0BEA /* MVVMKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4564E0A41C2732D200F8241F /* Expecta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4564E0A21C2732D200F8241F /* Expecta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4564E0A51C2732D200F8241F /* Specta.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4564E0A31C2732D200F8241F /* Specta.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4564E0A61C27330B00F8241F /* Expecta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4564E0A21C2732D200F8241F /* Expecta.framework */; };
@@ -297,9 +297,9 @@
 				45452D561B1D918100AEA113 /* MVVMListController.h in Headers */,
 				45452D571B1D918100AEA113 /* MVVMListViewModel.h in Headers */,
 				45452D581B1D918100AEA113 /* MVVMModel.h in Headers */,
-				45452D591B1D918100AEA113 /* MVVMViewModel.h in Headers */,
 				2E944281ABF8F1D4473AFD91 /* PMKPromise+MVVMAdditions.h in Headers */,
 				45452D601B1D9CAD00AEA113 /* MVVMKit.h in Headers */,
+				45452D591B1D918100AEA113 /* MVVMViewModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
